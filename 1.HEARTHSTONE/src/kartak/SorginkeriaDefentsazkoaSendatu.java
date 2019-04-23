@@ -9,7 +9,7 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 	public SorginkeriaDefentsazkoaSendatu(int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pSendatuKop) 
 	{
 		super (pIdKarta, pIzena, pDeskribapena,pBalioa);
-		// TODO Auto-generated constructor stub
+		this.sendatuKop = pSendatuKop;
 	}
 	
 	//gainontzeko metodoak

@@ -1,4 +1,4 @@
-package kartak;
+	package kartak;
 
 import a.projectPackage.Partida;
 import a.projectPackage.Teklatua;

@@ -6,10 +6,10 @@ public class SorginkeriaErasokoa extends Sorginkeria
 	private int mina;
 
 	//eraikitzailea 
-	public SorginkeriaErasokoa(int pIdKarta, String pIzena, String pDeskribapena,int pBalioa) 
+	public SorginkeriaErasokoa(int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pMina) 
 	{
 		super (pIdKarta, pIzena, pDeskribapena,pBalioa);
-		// TODO Auto-generated constructor stub
+		this.mina = pMina;
 	}
 
 	//gainontzeko metodoak
