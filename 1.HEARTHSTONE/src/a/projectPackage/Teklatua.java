@@ -13,9 +13,8 @@ public class Teklatua
 	
 	//eraikitzailea
 	private Teklatua ()
-	{
-		//TODO
-	}
+	{	}
+	
 	public static Teklatua getNireTeklatua()
 	{
 		//TODO

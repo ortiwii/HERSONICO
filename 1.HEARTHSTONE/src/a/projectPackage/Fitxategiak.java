@@ -5,12 +5,26 @@ import java.io.FileReader;
 
 public class Fitxategiak 
 {
+	private static Fitxategiak nireFitxategiak;
+	private BufferedReader br;
+	
+	private Fitxategiak ()
+	{}
+	
+	public static Fitxategiak getFitxategiak ()
+	{
+		if (nireFitxategiak == null)
+		{
+			nireFitxategiak = new Fitxategiak();
+		}
+		return nireFitxategiak;
+	}
 	public String irakurriTxt (String helbidea)
 	{
 		String texto = "";
 		try 
 		{
-			BufferedReader br = new BufferedReader(new FileReader(helbidea));
+			this.br = new BufferedReader(new FileReader(helbidea));
 			String temp = "";
 			String bfRead = br.readLine();
 			while (bfRead != null)
@@ -19,7 +33,6 @@ public class Fitxategiak
 				bfRead = br.readLine();
 			}
 			texto = temp;
-			br.close();
 		}
 		catch (Exception e) 
 		{
@@ -27,5 +40,4 @@ public class Fitxategiak
 		}
 		return texto;
 	}
-
 }
