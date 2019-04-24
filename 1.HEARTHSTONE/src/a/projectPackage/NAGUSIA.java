@@ -1,12 +1,11 @@
 package a.projectPackage;
 
+import kartak.ListaKartak;
+
 public class NAGUSIA 
 {
-
 	public static void main(String[] args) 
 	{
-		// TODO Auto-generated method stub
-		
-		//Aqui vamos a tener que cargar todas las kartas, cada una con sus parametros necesarios
+		Partida.getNirePartida().hasieratuPartida();
 	}
 }

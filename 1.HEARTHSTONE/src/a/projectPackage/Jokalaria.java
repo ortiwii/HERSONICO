@@ -32,12 +32,14 @@ public class Jokalaria
 		//Gainontzekoak
 		this.heroia=new Heroia();
 		this.gemak=1;
+		
+		this.hasieratuJokalaria();
 	}
 	
 	//gainontzeko metodoak
 	public void hasieratuJokalaria ()
 	{
-		//TODO
+		this.lapurtzekoKartak = Partida.kartaGuztiak.get40Karta();
 	}
 	public void jokatuTxanda(ListaKartak listaEtsaia) 
 	{
@@ -194,5 +196,9 @@ public class Jokalaria
 		public int getGemak ()
 		{
 			return this.gemak;
+		}
+		public ListaKartak getLapurtzekoKartak ()
+		{
+			return this.lapurtzekoKartak;
 		}
 }

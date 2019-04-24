@@ -1,14 +1,9 @@
 package a.projectPackage;
 
-import kartak.Heroia;
-import kartak.Karta;
-import kartak.ListaKartak;
-import kartak.Morroia;
-import kartak.SorginkeriaErasokoa;
-import trebetasunak.Trebetasuna;
-import trebetasunak.TrebetasunaDiana;
-import trebetasunak.TrebetasunaErasoJarraia;
-import trebetasunak.TrebetasunaVendetta;
+import java.util.Scanner;
+
+import kartak.*;
+import trebetasunak.*;
 
 public class Partida 
 {
@@ -16,7 +11,7 @@ public class Partida
 	private static Partida nirePartida = null;
 	private Jokalaria[] listaJokalariak;
 	private static int unekoTxanda;
-	private static ListaKartak kartaGuztiak=null;
+	public static ListaKartak kartaGuztiak=null;
 	
 	//eraikitzailea
 	private Partida() 
@@ -45,9 +40,8 @@ public class Partida
 			//Lehen blokea morroiak dira
 			String[] morroiak = blokeekaBanatuta[0].split(";");
 			for (int aux = 0; aux < morroiak.length; aux ++)
-			{
-				String egungoString = morroiak [aux];
-				String [] egungoInfo = egungoString.split("-");
+			{ 
+				String [] egungoInfo = morroiak[aux].split("-");
 				//int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna
 				Morroia egungoKarta;
 				if (egungoInfo[6] == "Eraso Jarraia")
@@ -55,7 +49,8 @@ public class Partida
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 														Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaErasoJarraia());
 				}
-				else if (egungoInfo[6] == "Diana")
+				else 
+					if (egungoInfo[6] == "Diana")
 				{
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaDiana());
@@ -78,27 +73,48 @@ public class Partida
 				//int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pMina
 			for (int aux = 0; aux < erasozkoSorginkeriak.length; aux ++)
 			{
-				SorginkeriaErasokoa egungoKarta = new SorginkeriaErasokoa(Integer.parseInt(erasozkoSorginkeriak[0]), erasozkoSorginkeriak[1], erasozkoSorginkeriak[2], 
-						Integer.parseInt(erasozkoSorginkeriak[3]), Integer.parseInt(erasozkoSorginkeriak[4]));
+				String [] egungoErasozkoSorginkeria = erasozkoSorginkeriak[aux].split("-");
+				SorginkeriaErasokoa egungoKarta = new SorginkeriaErasokoa(Integer.parseInt(egungoErasozkoSorginkeria[0]), egungoErasozkoSorginkeria[1], egungoErasozkoSorginkeria[2], 
+						Integer.parseInt(egungoErasozkoSorginkeria[3]), Integer.parseInt(egungoErasozkoSorginkeria[4]));
 				Partida.kartaGuztiak.gehituKarta(egungoKarta);
 			}
 			
 			//Hirugarren blokea sorginkeriak dira, hain zuzen ere Defentsazkoak, Bizitzazkoak
-			//TODO
+			String [] sendatuSorginkeriak = blokeekaBanatuta[2].split(";");
+				//int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pSendatuKop
+			for (int aux = 0; aux < sendatuSorginkeriak.length; aux ++)
+			{
+				String [] egungoSendatuSorginkeria = sendatuSorginkeriak[aux].split("-");
+				SorginkeriaDefentsazkoaSendatu egungoKarta = new SorginkeriaDefentsazkoaSendatu (Integer.parseInt(egungoSendatuSorginkeria[0]),egungoSendatuSorginkeria[1], 
+												egungoSendatuSorginkeria[2], Integer.parseInt(egungoSendatuSorginkeria[3]), Integer.parseInt(egungoSendatuSorginkeria[4]));
+				Partida.kartaGuztiak.gehituKarta(egungoKarta);
+			}
+			
 			//Laugarren blokea sorginkeriak dira, hain zuzen ere Defentsazkoak, Eskudokoak
-			//TODO
+			String [] eskudoSorginkeriak = blokeekaBanatuta[3].split(";");
+				//int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pEskudoKop
+			for (int aux = 0; aux < eskudoSorginkeriak.length; aux ++)
+			{
+				String [] egungoEskudoSorginkeriak = eskudoSorginkeriak[aux].split("-");
+				SorginkeriaDefentsazkoaEskudoa egungoKarta = new SorginkeriaDefentsazkoaEskudoa (Integer.parseInt(egungoEskudoSorginkeriak[0]), egungoEskudoSorginkeriak[1],
+														egungoEskudoSorginkeriak[2], Integer.parseInt(egungoEskudoSorginkeriak[3]), Integer.parseInt(egungoEskudoSorginkeriak[4]));
+				Partida.kartaGuztiak.gehituKarta(egungoKarta);
+			}		
 	}
 	public void hasieratuPartida ()
 	{
-		//TODO
+		this.kartaGuztiakKargatu();
 		//Jokalariak hasieratu
-		for (int i = 1; i<=2; i++)
-		{
-			String pIzena = Teklatua.getNireTeklatua().Irakurri("Sartu "+i+". jokalariaren izena");
-			Jokalaria jok = new Jokalaria (pIzena);
-			jok.hasieratuJokalaria();
-			this.listaJokalariak[i] = jok;
-		}
+			String izena1 = Teklatua.getNireTeklatua().Irakurri("Sartu 1. jokalariaren izena:");
+			Jokalaria jok1 = new Jokalaria (izena1);
+			this.listaJokalariak[0] = jok1;
+			
+			String izena2 = Teklatua.getNireTeklatua().Irakurri("Sartu 2. jokalariaren izena:");
+			Jokalaria jok2 = new Jokalaria (izena2);
+			this.listaJokalariak[1] = jok2;
+			String irabazlea = this.jokatu();
+			System.out.println("Partida dagoeneko amaitu da, eta irabazlea:");
+			System.out.println(irabazlea);
 	}
 	public String jokatu() 
 	{

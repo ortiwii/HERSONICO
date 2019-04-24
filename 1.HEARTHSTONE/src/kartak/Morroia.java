@@ -21,7 +21,7 @@ public class Morroia extends Karta
 		super (pIdKarta, pIzena, pDeskribapena, pBalioa, false);
 			//trebetasuna
 		this.trebetasuna = pTrebetasuna;
-		this.trebetasuna.erabiliTrebetasuna (this);
+//		this.trebetasuna.erabiliTrebetasuna (this);
 			//atributoen hasieratzea
 		this.niriSoilikErasoAhal = false;
 		// TODO

@@ -3,6 +3,7 @@ package kartak;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
+import java.util.Random;
 
 public class ListaKartak 
 {
@@ -119,10 +120,7 @@ public class ListaKartak
 	}
 	public void gehituKarta(Karta pKarta) 
 	{
-		if (!this.lista.contains(pKarta))
-		{
 			this.lista.add(pKarta);
-		}
 	}
 	public void kenduKarta(Karta pKarta) 
 	{
@@ -187,5 +185,15 @@ public class ListaKartak
 	public int getLuzeera ()
 	{
 		return this.lista.size();
+	}
+	public ListaKartak get40Karta ()
+	{
+		ListaKartak listaKartak = new ListaKartak();
+		Random rand = new Random ();
+		for (int i = 0; i < 40; i++)
+		{
+			listaKartak.gehituKarta(this.lista.get(rand.nextInt(this.lista.size()-1)));
+		}
+		return listaKartak;
 	}
 }

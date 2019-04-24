@@ -9,23 +9,27 @@ public class Teklatua
 {
 	//atributoak
 	private static Teklatua nireTeklatua = null;
-	private Scanner sc;
-	
+	private Scanner sc = new Scanner(System.in);
 	//eraikitzailea
 	private Teklatua ()
-	{	}
+	{	
+		
+	}
 	
 	public static Teklatua getNireTeklatua()
 	{
-		//TODO
+		if (nireTeklatua == null)
+		{
+			nireTeklatua = new Teklatua ();
+		}
 		return Teklatua.nireTeklatua;
 	}
 	
 	//gainontzeko metodoak
 	public String Irakurri (String aurrekoMezua)
 	{
-		//TODO
-		String mezua = "A";
+		System.out.println(aurrekoMezua);
+		String mezua = sc.next();
 		return mezua;
 	}
 	public int OsoaIrakurri (String pAurrekoMezua)
@@ -34,7 +38,6 @@ public class Teklatua
 		int emaitza = sc.nextInt();
 		return emaitza ;
     }
-
 	public boolean irakurriBaiEz (String pAurrekoMezua, String pBai, String pEz)
 	{
 		//TODO
@@ -55,9 +58,7 @@ public class Teklatua
 		}
 		//7. aukera pasatu egiteko da
 		System.out.println((kont+1)+".aukera ) Pasatu");
-		Scanner sc = new Scanner(System.in);
 		int aukeratutakoZenb = sc.nextInt();
-		sc.close();
 			//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
 				//baldin pasa duen
 		if (kont+1 == aukeratutakoZenb)
