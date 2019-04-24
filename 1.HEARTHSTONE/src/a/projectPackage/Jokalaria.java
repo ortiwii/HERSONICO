@@ -41,7 +41,7 @@ public class Jokalaria
 	{
 		this.lapurtzekoKartak = Partida.kartaGuztiak.get40Karta();
 	}
-	public void jokatuTxanda(ListaKartak listaEtsaia) 
+	public void jokatuTxanda() 
 	{
 		//Lehenik eta behin karta bat lapurtuko dugu
 		this.lapurtu();
@@ -49,7 +49,7 @@ public class Jokalaria
 		//Gemen arabera aukeratu daitekeen bitartean, kartak aukeratu
 		boolean salataria = true;
 		ListaKartak aukeratuDaitezkeenKartak = new ListaKartak ();
-		while (this.aukeratuAhalDu() && salataria && !Partida.getNirePartida().irabazia())
+		while (this.aukeratuAhalDu() && salataria && Partida.getNirePartida().irabazia() == null)
 		{
 			System.out.println("");
 			aukeratuDaitezkeenKartak = this.eskukoKartak.getAukeratzekoKartaPosibleak (this.gemak);
@@ -71,7 +71,7 @@ public class Jokalaria
 		//Amaitzeko, eraso dezakeen bitartean eraso prozesua jarraituko du
 		salataria = true;
 		ListaKartak zelairaAteraDaitezkeenKartak = new ListaKartak ();
-		while (this.erasoDezake() && !Partida.getNirePartida().irabazia() && salataria)
+		while (this.erasoDezake() && Partida.getNirePartida().irabazia() == null && salataria)
 		{
 			zelairaAteraDaitezkeenKartak = this.zelaikoKartak.getErasoDezakeetenKartak();
 			Karta erasotzekoKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, bat aukeratu:", zelairaAteraDaitezkeenKartak);
@@ -127,7 +127,7 @@ public class Jokalaria
 			emaitza = true;
 		}
 		//partida irabazita dagoen adierazi		
-		if (Partida.getNirePartida().irabazia())
+		if (Partida.getNirePartida().irabazia() != null)
 		{
 			emaitza = false;
 		}
@@ -141,7 +141,7 @@ public class Jokalaria
 	{
 		boolean emaitza = true;
 		//baldin partida irabazia ez dagoen
-		if (Partida.getNirePartida().irabazia())
+		if (Partida.getNirePartida().irabazia() != null)
 		{
 			emaitza = false;
 		}
@@ -200,5 +200,9 @@ public class Jokalaria
 		public ListaKartak getLapurtzekoKartak ()
 		{
 			return this.lapurtzekoKartak;
+		}
+		public String getIzena ()
+		{
+			return this.izena;
 		}
 }

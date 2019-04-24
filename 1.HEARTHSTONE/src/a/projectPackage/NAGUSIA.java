@@ -1,6 +1,5 @@
 package a.projectPackage;
 
-import kartak.ListaKartak;
 
 public class NAGUSIA 
 {

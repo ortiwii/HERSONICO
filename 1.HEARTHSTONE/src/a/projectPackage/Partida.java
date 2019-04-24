@@ -1,7 +1,5 @@
 package a.projectPackage;
 
-import java.util.Scanner;
-
 import kartak.*;
 import trebetasunak.*;
 
@@ -113,29 +111,42 @@ public class Partida
 			Jokalaria jok2 = new Jokalaria (izena2);
 			this.listaJokalariak[1] = jok2;
 			String irabazlea = this.jokatu();
+			
 			System.out.println("Partida dagoeneko amaitu da, eta irabazlea:");
 			System.out.println(irabazlea);
 	}
 	public String jokatu() 
 	{
-		//TODO
+		while (this.irabazia() == null)
+		{
+			Jokalaria egungoJokalaria = this.getUnekoJokalaria();
+			egungoJokalaria.jokatuTxanda();
+			this.inprimatuPartida();
+			this.hurrengoTxanda();
+		}
 		
-		return "Jokalari irabazlearen izena";
+		return this.irabazia().getIzena();
 	}
 	public void hurrengoTxanda() 
 	{
 		//Suma 1 a uneko txanda
 		Partida.unekoTxanda = Partida.unekoTxanda + 1;
-		//TODO, porque no se si necesita algo mas 
+ 
 	}
-	public boolean irabazia()
+	public Jokalaria irabazia()
 	{
-		boolean emaitza = false;
-		if (this.listaJokalariak[0].irabazia() || this.listaJokalariak[1].irabazia())
+		if (this.listaJokalariak[0].irabazia()) 		
 		{
-			emaitza = true;
+			return listaJokalariak[0];
 		}
-		return emaitza;
+		else if (this.listaJokalariak[1].irabazia())
+		{
+			return listaJokalariak[1];
+		}
+		else
+		{
+			return null;
+		}
 	}
 	
 	public void inprimatuPartida() 

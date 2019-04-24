@@ -38,39 +38,59 @@ public class Teklatua
 		int emaitza = sc.nextInt();
 		return emaitza ;
     }
-	public boolean irakurriBaiEz (String pAurrekoMezua, String pBai, String pEz)
+	public void itxaronEnterArte ()
 	{
-		//TODO
-		return false;
+		boolean salataria = false;
+		String aux = "";
+		String textoa = "";
+		System.out.println("Sakatu enter jarraitzeko:");
+		while (!salataria)
+		{
+			textoa = sc.nextLine();
+			if (aux != textoa)
+			{
+				salataria = true;
+			}
+		}
 	}
-	
 	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak)
 	{
+		
 		System.out.println(pAurrekoMezua);
-		Iterator <Karta> itr = pAukerak.getIteradorea();
-		int kont = 0;
-		Karta egungoKarta;
-		while (itr.hasNext())
+		if (pAukerak != null )
 		{
-			kont ++;
-			egungoKarta = itr.next();
-			System.out.print(kont+".aukera ) "); egungoKarta.imprimatu();
+			Iterator <Karta> itr = pAukerak.getIteradorea();
+			int kont = 0;
+			Karta egungoKarta;
+			while (itr.hasNext())
+			{
+				kont ++;
+				egungoKarta = itr.next();
+				System.out.print(kont+".aukera ) "); egungoKarta.imprimatu();
+			}
+			//7. aukera pasatu egiteko da
+			System.out.println((kont+1)+".aukera ) Pasatu");
+			int aukeratutakoZenb = sc.nextInt();
+				//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
+					//baldin pasa duen
+			if (kont+1 == aukeratutakoZenb)
+			{
+				egungoKarta = null;
+			}
+					//baldin karta bat aukeratu duen
+			else
+			{
+				egungoKarta = pAukerak.getPosizioHonetakoKarta(aukeratutakoZenb);
+			}
+			return egungoKarta;
 		}
-		//7. aukera pasatu egiteko da
-		System.out.println((kont+1)+".aukera ) Pasatu");
-		int aukeratutakoZenb = sc.nextInt();
-			//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
-				//baldin pasa duen
-		if (kont+1 == aukeratutakoZenb)
-		{
-			egungoKarta = null;
-		}
-				//baldin karta bat aukeratu duen
 		else
 		{
-			egungoKarta = pAukerak.getPosizioHonetakoKarta(aukeratutakoZenb);
+			System.out.println("Ez dago aukeratu dezakezun kartarik");
+			this.itxaronEnterArte();
+			return null;
 		}
-		return egungoKarta;
+		
 	}
 	public Karta irakurriEtsaiarenKarta ()
 	{
