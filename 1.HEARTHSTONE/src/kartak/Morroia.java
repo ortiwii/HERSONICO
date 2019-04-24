@@ -42,7 +42,7 @@ public class Morroia extends Karta
 				{
 					((Morroia) erasotukoDenKarta).kartaHoniErasotu(this.erasoa);
 				}
-				this.kartaHoniErasotu(	((Morroia) erasotukoDenKarta).getErasoa()	);
+				this.kartaHoniErasotu(((Morroia) erasotukoDenKarta).getErasoa());
 				
 				//Gemen eguneraketa
 				int gemak = Partida.getNirePartida().getUnekoJokalaria().getGemak();
@@ -63,6 +63,17 @@ public class Morroia extends Karta
 		}
 		//behin karta erabilita, ezin dezake berriz ere eraso egin
 		super.setErasoDezakeen(false);
+	}
+	public void imprimatu ()
+	{
+		if (this.getErasoDezakeen())
+		{
+			System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] ("+super.balioa+" gema)"+"// Eraso AHAL");
+		}
+		else
+		{
+			System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] ("+this.balioa+" gema)"+"// EZIN Eraso");
+		}
 	}
 	public int kartaHoniErasotu (int pErasoa)
 	{

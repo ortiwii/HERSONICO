@@ -101,6 +101,11 @@ public class Partida
 	}
 	public void hasieratuPartida ()
 	{
+		System.out.println("---------------------------------- HERATHSTONE ----------------------------------");
+		System.out.println("");
+		System.out.println("_________________________________________________________________________________");
+		System.out.println("");
+		System.out.println("");
 		this.kartaGuztiakKargatu();
 		//Jokalariak hasieratu
 			String izena1 = Teklatua.getNireTeklatua().Irakurri("Sartu 1. jokalariaren izena:");
@@ -129,6 +134,7 @@ public class Partida
 	}
 	public void hurrengoTxanda() 
 	{
+		Teklatua.getNireTeklatua().itxaronEnterArte();
 		//Suma 1 a uneko txanda
 		Partida.unekoTxanda = Partida.unekoTxanda + 1;
  
@@ -151,7 +157,10 @@ public class Partida
 	
 	public void inprimatuPartida() 
 	{
-		//TODO
+		System.out.println(this.listaJokalariak[0].getIzena()+"-ren Zelaiko Kartak:");
+		this.listaJokalariak[0].getNireZelaikoKartak().inprimatuLista();
+		System.out.println(this.listaJokalariak[1].getIzena()+"-ren Zelaiko Kartak:");
+		this.listaJokalariak[1].getNireZelaikoKartak().inprimatuLista();
 	}
 		//getters
 	public Jokalaria getUnekoJokalaria ()

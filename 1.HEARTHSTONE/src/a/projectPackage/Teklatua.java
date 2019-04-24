@@ -12,9 +12,7 @@ public class Teklatua
 	private Scanner sc = new Scanner(System.in);
 	//eraikitzailea
 	private Teklatua ()
-	{	
-		
-	}
+	{	}
 	
 	public static Teklatua getNireTeklatua()
 	{
@@ -96,42 +94,50 @@ public class Teklatua
 	{
 		Karta aukeratutakoKarta ;
 		int kont = 0;
-		System.out.println("Aukeratu etsaiaren karten artean, zein kartari erosotuko diozun:");
-		//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
-		if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
-		{	//Hemen sartzen bada badakigu kartaren batek diana duela
-			Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getIteradorea();
-			while (itr.hasNext())
-			{
-				aukeratutakoKarta = itr.next();
-				kont ++;
-				System.out.print(kont+". aukera) ");aukeratutakoKarta.imprimatu();
-			}
-			int zenb = sc.nextInt();
-			//Orain badakigu zein den gure aukera
-			aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getPosizioHonetakoKarta(zenb);
-		}
-		else
-		{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
-			System.out.print("0. aukera) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
-			Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();
-			while (itr.hasNext())
-			{
-				kont ++;
-				aukeratutakoKarta = itr.next();
-				System.out.print(kont+". aukera) ");aukeratutakoKarta.imprimatu();
-			}
-			int zenb = sc.nextInt();
-			//Orain dagoeneko badakigu zein aukeratu duen
-			if (zenb == 0)
-			{
-				aukeratutakoKarta = null;
+		if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak() != null)
+		{
+			System.out.println("Aukeratu etsaiaren karten artean, zein kartari erosotuko diozun:");
+			//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
+			if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
+			{	//Hemen sartzen bada badakigu kartaren batek diana duela
+				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getIteradorea();
+				while (itr.hasNext())
+				{
+					aukeratutakoKarta = itr.next();
+					kont ++;
+					System.out.print(kont+". aukera) ");aukeratutakoKarta.imprimatu();
+				}
+				int zenb = sc.nextInt();
+				//Orain badakigu zein den gure aukera
+				aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getPosizioHonetakoKarta(zenb);
 			}
 			else
-			{
-				aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getPosizioHonetakoKarta(zenb);
+			{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
+				System.out.print("0. aukera) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
+				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();
+				while (itr.hasNext())
+				{
+					kont ++;
+					aukeratutakoKarta = itr.next();
+					System.out.print(kont+". aukera) ");aukeratutakoKarta.imprimatu();
+				}
+				int zenb = sc.nextInt();
+				//Orain dagoeneko badakigu zein aukeratu duen
+				if (zenb == 0)
+				{
+					aukeratutakoKarta = null;
+				}
+				else
+				{
+					aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getPosizioHonetakoKarta(zenb);
+				}
 			}
+			return aukeratutakoKarta;
 		}
-		return aukeratutakoKarta;
+		else
+		{
+			System.out.println("Ez dago Kartarik zelaian, soilik heroiari eraso diezaiokezu");
+			return null;
+		}
 	}
 }

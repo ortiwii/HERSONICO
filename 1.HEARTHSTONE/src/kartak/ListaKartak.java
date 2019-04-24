@@ -9,7 +9,6 @@ public class ListaKartak
 {
 	//atributoak
 	private ArrayList<Karta> lista;
-	private boolean ikusgarria;
 	
 	//eraikitzailea
 	public ListaKartak () 
@@ -129,23 +128,14 @@ public class ListaKartak
 			this.lista.remove(pKarta);
 		}
 	}
-	public Karta bilatuObjetiboa(Karta pKarta) 
-	{
-		//TODO
-		Karta karta=null;
-		return karta;
-	}
 	public void inprimatuLista() 
 	{
-		if (this.ikusgarria)
+		Iterator <Karta> itr = this.getIteradorea();
+		Karta egungoKarta;
+		while (itr.hasNext())
 		{
-			Iterator <Karta> itr = this.getIteradorea();
-			Karta egungoKarta;
-			while (itr.hasNext())
-			{
-				egungoKarta = itr.next();
-				egungoKarta.imprimatu();
-			}
+			egungoKarta = itr.next();
+			egungoKarta.imprimatu();
 		}
 	}
 	public Karta getPosizioHonetakoKarta (int pos)

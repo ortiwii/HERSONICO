@@ -8,7 +8,6 @@ public abstract class Sorginkeria extends Karta
 	public Sorginkeria(int pIdKarta, String pIzena, String pDeskribapena, int pBalioa) 
 	{
 		super(pIdKarta, pIzena, pDeskribapena, pBalioa, true);
-		//TODO
 	}
 	
 	//gainontzeko metodoak
@@ -17,6 +16,11 @@ public abstract class Sorginkeria extends Karta
 	{
 		boolean emaitza = false; 
 		return emaitza;
+	}
+	public void imprimatu ()
+	{
+		System.out.print("Sorginkerria:");
+		System.out.println(super.izena+" ("+super.balioa+" gema)");
 	}
 	public void egoeraEguneratu ()
 	{

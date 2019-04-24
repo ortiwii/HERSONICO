@@ -31,7 +31,7 @@ public class Jokalaria
 		this.lapurtzekoKartak = new ListaKartak();
 		//Gainontzekoak
 		this.heroia=new Heroia();
-		this.gemak=1;
+		this.gemak=0;
 		
 		this.hasieratuJokalaria();
 	}
@@ -43,8 +43,19 @@ public class Jokalaria
 	}
 	public void jokatuTxanda() 
 	{
+		if (this.gemak < 10)
+		{
+			this.gemak = this.gemak + 1;
+		}
+		System.out.println("______________________________________________________________________________________________");
+		System.out.println(this.izena+"-ren txanda:");
+		System.out.println(this.heroia.getBizitza()+" Bizitza du Heroiak, eta "+this.gemak+" gema dituzu");
 		//Lehenik eta behin karta bat lapurtuko dugu
 		this.lapurtu();
+		
+		//Eskuko Kartak inprimatu
+		System.out.println("Zure eskuko kartak");
+		this.eskukoKartak.inprimatuLista();
 
 		//Gemen arabera aukeratu daitekeen bitartean, kartak aukeratu
 		boolean salataria = true;
