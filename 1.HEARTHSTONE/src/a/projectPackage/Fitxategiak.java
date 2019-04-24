@@ -11,7 +11,7 @@ public class Fitxategiak
 	private Fitxategiak ()
 	{}
 	
-	public static Fitxategiak getFitxategiak ()
+	public static synchronized Fitxategiak getFitxategiak ()
 	{
 		if (nireFitxategiak == null)
 		{
