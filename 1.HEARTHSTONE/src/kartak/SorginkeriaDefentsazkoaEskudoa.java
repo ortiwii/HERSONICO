@@ -24,7 +24,15 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 	}
 	public void emanDefentsa (Karta pKarta)
 	{
-		((Morroia)pKarta).kartaHoniErasotu(eskudoKop*(-1));
-		pKarta.imprimatu();
+		if (pKarta != null)
+		{		
+			((Morroia)pKarta).kartaHoniErasotu(eskudoKop*(-1));
+			pKarta.imprimatu();
+		}
+		else
+		{
+			System.out.println("Ez diozu inori emango defentsa");
+		}
+		
 	}
 }
