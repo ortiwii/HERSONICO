@@ -83,5 +83,9 @@ public abstract class Karta
 		{
 			return this.erasoAhalDu;
 		}
+		public String getIzena ()
+		{
+			return this.izena;
+		}
 }
 	

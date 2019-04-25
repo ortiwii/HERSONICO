@@ -41,13 +41,30 @@ public class Jokalaria
 	{
 		this.lapurtzekoKartak = Partida.kartaGuztiak.get40Karta();
 	}
+	private void gemenEguneraketa ()
+	{
+		if (Partida.getNirePartida().getUnekoTxanda() < 9)
+		{
+			this.gemak = Partida.getNirePartida().getUnekoTxanda()+1;
+		}
+		else
+		{
+			this.gemak = 10;
+		}
+	}
+	public void kartenEgoeraEguneratu ()
+	{
+		this.zelaikoKartak.kartenEgoeraEguneratu();
+	}
+	public void konprobatuEaKartarikHildaDagoen ()
+	{
+		this.zelaikoKartak.konprobatuEaKartarikHildaDagoen();
+	}
 	public void jokatuTxanda() 
 	{
 		this.zelaikoKartak.kartenEgoeraEguneratu();
-		if (this.gemak < 10)
-		{
-			this.gemak = this.gemak + 1;
-		}
+		this.gemenEguneraketa();
+		
 		System.out.println("______________________________________________________________________________________________");
 		System.out.println(this.izena+"-ren txanda:");
 		System.out.println(this.heroia.getBizitza()+" Bizitza du Heroiak, eta "+this.gemak+" gema dituzu");
@@ -65,7 +82,7 @@ public class Jokalaria
 		{
 			System.out.println("");
 			aukeratuDaitezkeenKartak = this.eskukoKartak.getAukeratzekoKartaPosibleak (this.gemak);
-			Karta aukeratutakoKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure eskuko karten artean, bat aukeratu:", aukeratuDaitezkeenKartak);
+			Karta aukeratutakoKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure eskuko karten artean, bat aukeratu ("+this.gemak+" gema) :", aukeratuDaitezkeenKartak);
 			//Baldin pasa duen
 			if (aukeratutakoKarta == null)
 			{
@@ -75,11 +92,12 @@ public class Jokalaria
 			{
 				aukeratutakoKarta.setZelairaAteratakoTxanda();
 				this.zelaianJarri(aukeratutakoKarta);
+				this.konprobatuEaKartarikHildaDagoen();
 			}
 		}
 		
-		//ondoren karten egoera eguneratu beharko dugu, batzuek eraso dezakeetelako, eta beste batzuk ez
-		this.zelaikoKartak.kartenEgoeraEguneratu();
+		//ondoren karten egoera eguneratu beharko dugu, batzuek eraso dezakeetelako, eta beste batzuk ez, eta baten bat hilda egon daitekeelako
+		Partida.getNirePartida().kartenEgoeraEguneratu();
 		
 		//Amaitzeko, eraso dezakeen bitartean eraso prozesua jarraituko du
 		salataria = true;
@@ -95,11 +113,13 @@ public class Jokalaria
 			}
 			else
 			{
-				erasotzekoKarta.jokatuKarta();		
+				erasotzekoKarta.jokatuKarta();
+				erasotzekoKarta.setErasoDezakeen(false);
 				//konprobatu ea kartaren bat hilda dagoen
-				this.zelaikoKartak.konprobatuEaKartarikHildaDagoen();
+				this.konprobatuEaKartarikHildaDagoen();
 			}
 		}
+		Partida.getNirePartida().kartenEgoeraEguneratu();
 	}
 	private void lapurtu () 
 	{
@@ -113,6 +133,7 @@ public class Jokalaria
 		{
 			this.eskukoKartak.kenduKarta(pKarta);
 			this.zelaikoKartak.gehituKarta(pKarta);
+			this.gemak = this.gemak - pKarta.getBalioa();
 		}
 		else if (pKarta instanceof Sorginkeria)
 		{

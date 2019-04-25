@@ -9,10 +9,12 @@ public class Teklatua
 {
 	//atributoak
 	private static Teklatua nireTeklatua = null;
-	private Scanner sc = new Scanner(System.in);
+	private Scanner sc;
 	//eraikitzailea
 	private Teklatua ()
-	{	}
+	{	
+		sc = new Scanner(System.in);
+	}
 	
 	public static Teklatua getNireTeklatua()
 	{
@@ -94,12 +96,12 @@ public class Teklatua
 	{
 		Karta aukeratutakoKarta ;
 		int kont = 0;
-		if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak() != null || 
-			Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getLuzeera() != 0)
+		Jokalaria jokEtsaia = Partida.getNirePartida().getJokalariEtsaia();
+		if (jokEtsaia.getNireZelaikoKartak() != null || jokEtsaia.getNireZelaikoKartak().getLuzeera() != 0)
 		{
-			System.out.println("Aukeratu etsaiaren karten artean, zein kartari erosotuko diozun:");
+			System.out.println("Aukeratu "+jokEtsaia.getIzena()+"-ren karten artean, zein kartari erosotuko diozun:");
 			//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
-			if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
+			if (jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
 			{	//Hemen sartzen bada badakigu kartaren batek diana duela
 				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getIteradorea();
 				while (itr.hasNext())
@@ -112,7 +114,7 @@ public class Teklatua
 				//Orain badakigu zein den gure aukera
 				aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getPosizioHonetakoKarta(zenb);
 			}
-			else
+			else  
 			{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
 				System.out.print("0. aukera) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
 				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();

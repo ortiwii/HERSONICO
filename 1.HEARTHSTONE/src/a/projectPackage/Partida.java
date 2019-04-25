@@ -100,11 +100,12 @@ public class Partida
 	}
 	public void hasieratuPartida ()
 	{
-		System.out.println("---------------------------------- HEARTHSTONE ----------------------------------");
+		System.out.println("*****************************************************************************************************************");
+		System.out.println("------------------------------------------------   HEARTHSTONE   ------------------------------------------------");
+		System.out.println("*****************************************************************************************************************");
 		System.out.println("");
-		System.out.println("_________________________________________________________________________________");
-		System.out.println("");
-		System.out.println("");
+		System.out.println("PARTIDA HASIKO DA :)");
+		System.out.println("__________________________________________________________________________________________________________________");
 		this.kartaGuztiakKargatu();
 		//Jokalariak hasieratu
 			String izena1 = Teklatua.getNireTeklatua().Irakurri("Sartu 1. jokalariaren izena:");
@@ -115,8 +116,6 @@ public class Partida
 			Jokalaria jok2 = new Jokalaria (izena2);
 			this.listaJokalariak[1] = jok2;
 			
-			//probisioan
-			Partida.kartaGuztiak.inprimatuLista();
 			String irabazlea = this.jokatu();
 			
 			System.out.println("Partida dagoeneko amaitu da, eta irabazlea:");
@@ -163,6 +162,14 @@ public class Partida
 		this.listaJokalariak[0].getNireZelaikoKartak().inprimatuLista();
 		System.out.println(this.listaJokalariak[1].getIzena()+"-ren Zelaiko Kartak:");
 		this.listaJokalariak[1].getNireZelaikoKartak().inprimatuLista();
+	}
+	public void kartenEgoeraEguneratu ()
+	{
+		this.listaJokalariak[0].kartenEgoeraEguneratu();
+		this.listaJokalariak[0].konprobatuEaKartarikHildaDagoen();
+		
+		this.listaJokalariak[1].kartenEgoeraEguneratu();
+		this.listaJokalariak[1].konprobatuEaKartarikHildaDagoen();
 	}
 		//getters
 	public Jokalaria getUnekoJokalaria ()

@@ -109,6 +109,7 @@ public class Morroia extends Karta
 		{
 			super.setErasoDezakeen(false);
 		}
+		
 	}
 	//trebetasunak
 		//diana

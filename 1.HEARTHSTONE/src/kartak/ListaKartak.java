@@ -34,6 +34,7 @@ public class ListaKartak
 	}
 	public void kartenEgoeraEguneratu ()
 	{
+		this.konprobatuEaKartarikHildaDagoen();
 		Iterator <Karta> itr = this.getIteradorea();
 		Karta egungoKarta;
 		while (itr.hasNext())
@@ -98,20 +99,28 @@ public class ListaKartak
 	}
 	public void konprobatuEaKartarikHildaDagoen ()
 	{
-		Iterator <Karta> itr = this.getIteradorea();
-		Karta egungoKarta;
-		
-		while (itr.hasNext())
+		ArrayList <Karta> emaitza = new ArrayList <Karta> ();
+		if (this != null)
 		{
-			egungoKarta = itr.next();
-			if (egungoKarta instanceof Morroia)
+			Iterator <Karta> itr = this.getIteradorea();
+			Karta egungoKarta;
+			while (itr.hasNext())
 			{
-				if ( ((Morroia)egungoKarta).getBizitza() <= 0 )
+				egungoKarta = itr.next();
+				if (egungoKarta instanceof Morroia)
 				{
-					this.kenduKarta(egungoKarta);
+					if ( ((Morroia)egungoKarta).getBizitza() <= 0 )
+					{
+						System.out.println("--> "+ ((Morroia)egungoKarta).getIzena()+" HILDA !!!");
+					}
+					else
+					{
+						emaitza.add(egungoKarta);
+					}
 				}
 			}
 		}
+		this.lista = emaitza;
 	}
 	public ArrayList<Karta> getLista()
 	{
@@ -135,6 +144,7 @@ public class ListaKartak
 		while (itr.hasNext())
 		{
 			egungoKarta = itr.next();
+			System.out.print("*");
 			egungoKarta.imprimatu();
 		}
 	}
