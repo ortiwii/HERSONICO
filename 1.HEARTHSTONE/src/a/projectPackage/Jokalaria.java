@@ -65,51 +65,69 @@ public class Jokalaria
 		this.zelaikoKartak.kartenEgoeraEguneratu();
 		this.gemenEguneraketa();
 		
-		System.out.println("______________________________________________________________________________________________");
-		System.out.println(this.izena+"-ren txanda:");
-		System.out.println(this.heroia.getBizitza()+" Bizitza du Heroiak, eta "+this.gemak+" gema dituzu");
+		//Lehen mezua agertzeko
+		String lehenMezua = "|	 "+this.izena+"-ren TXANDA:     "+this.heroia.getBizitza()+" Bizitza du Heroiak, eta "+this.gemak+" gema dituzu  |";
+		System.out.print("      ");Teklatua.getNireTeklatua().imprimatuX_(lehenMezua.lastIndexOf("|"));System.out.println("");
+		System.out.print("     ");System.out.println(lehenMezua);
+		System.out.print("     |");Teklatua.getNireTeklatua().imprimatuX_(lehenMezua.length()-1);System.out.println("|");
+		System.out.println();
+
+		
 		//Lehenik eta behin karta bat lapurtuko dugu
 		this.lapurtu();
 		
-		//Eskuko Kartak inprimatu
-		System.out.println("Zure eskuko kartak");
+		//Eskuko eta zelaiko Kartak inprimatu
+		System.out.println("    Hauek dira zure eskuko kartak:");
 		this.eskukoKartak.inprimatuLista();
+		System.out.println("");
+		System.out.println("    Eta hauek zure zelaiko kartak:");
+		this.zelaikoKartak.inprimatuLista();
 
+		System.out.println("    ------------------------------------------------------------------------------------------");
+		
 		//Gemen arabera aukeratu daitekeen bitartean, kartak aukeratu
+		System.out.println("  + Hautatze Prozesua:\n");
 		boolean salataria = true;
 		ListaKartak aukeratuDaitezkeenKartak = new ListaKartak ();
 		while (this.aukeratuAhalDu() && salataria && Partida.getNirePartida().irabazia() == null)
 		{
-			System.out.println("");
 			aukeratuDaitezkeenKartak = this.eskukoKartak.getAukeratzekoKartaPosibleak (this.gemak);
-			Karta aukeratutakoKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure eskuko karten artean, bat aukeratu ("+this.gemak+" gema) :", aukeratuDaitezkeenKartak);
+			Karta aukeratutakoKarta = Teklatua.getNireTeklatua().irakurriAukera("	-> Zure eskuko karten artean, zelaira aterako duzun bat aukeratu ("+this.gemak+" gema dituzu):", aukeratuDaitezkeenKartak);
 			//Baldin pasa duen
 			if (aukeratutakoKarta == null)
 			{
+				System.out.println("\n  + Hautatze prozesua amaituta");
 				salataria = false;
 			}
 			else
 			{
+				System.out.println("	"+aukeratutakoKarta.getIzena()+" aukeratuta, eta zelaian jarrita");
 				aukeratutakoKarta.setZelairaAteratakoTxanda();
 				this.zelaianJarri(aukeratutakoKarta);
 				this.konprobatuEaKartarikHildaDagoen();
 			}
+			Teklatua.getNireTeklatua().itxaronEnterArte();
 		}
 		
 		//ondoren karten egoera eguneratu beharko dugu, batzuek eraso dezakeetelako, eta beste batzuk ez, eta baten bat hilda egon daitekeelako
 		Partida.getNirePartida().kartenEgoeraEguneratu();
 		
 		//Amaitzeko, eraso dezakeen bitartean eraso prozesua jarraituko du
+		
 		salataria = true;
 		ListaKartak zelairaAteraDaitezkeenKartak = new ListaKartak ();
-		while (this.erasoDezake() && Partida.getNirePartida().irabazia() == null && salataria)
+		System.out.println("    ------------------------------------------------------------------------------------------");
+		System.out.println("  + Eraso Prozesua:\n");
+		Partida.getNirePartida().kartenEgoeraEguneratu();
+		while (Partida.getNirePartida().irabazia() == null && salataria)
 		{
 			zelairaAteraDaitezkeenKartak = this.zelaikoKartak.getErasoDezakeetenKartak();
-			Karta erasotzekoKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, bat aukeratu:", zelairaAteraDaitezkeenKartak);
+			Karta erasotzekoKarta = Teklatua.getNireTeklatua().irakurriAukera("	-> Zure zelaiko karten artean, eraso dezakeen bat atera zelaira:", zelairaAteraDaitezkeenKartak);
 			if (erasotzekoKarta == null)
 			{
 				//Baldin pasa duen
 				salataria = false;
+				System.out.println("\n  + Eraso prozesua amaituta");
 			}
 			else
 			{

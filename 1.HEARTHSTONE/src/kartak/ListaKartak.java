@@ -139,13 +139,20 @@ public class ListaKartak
 	}
 	public void inprimatuLista() 
 	{
-		Iterator <Karta> itr = this.getIteradorea();
-		Karta egungoKarta;
-		while (itr.hasNext())
+		if (this.getLuzeera() != 0)
+		{		
+			Iterator <Karta> itr = this.getIteradorea();
+			Karta egungoKarta;
+			while (itr.hasNext())
+			{
+				egungoKarta = itr.next();
+				System.out.print("    * ");
+				egungoKarta.imprimatu();
+			}
+		}
+		else
 		{
-			egungoKarta = itr.next();
-			System.out.print("*");
-			egungoKarta.imprimatu();
+			System.out.println("    - Ez duzu kartarik");
 		}
 	}
 	public Karta getPosizioHonetakoKarta (int pos)

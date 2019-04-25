@@ -29,6 +29,7 @@ public class Teklatua
 	public String Irakurri (String aurrekoMezua)
 	{
 		System.out.println(aurrekoMezua);
+		System.out.print("	");
 		String mezua = sc.next();
 		return mezua;
 	}
@@ -43,13 +44,15 @@ public class Teklatua
 		boolean salataria = false;
 		String aux = "";
 		String textoa = "";
-		System.out.println("Sakatu enter jarraitzeko:");
+
+		System.out.print("\n	Sakatu enter jarraitzeko:");
 		while (!salataria)
 		{
 			textoa = sc.nextLine();
 			if (aux != textoa)
 			{
 				salataria = true;
+				System.out.println("");
 			}
 		}
 	}
@@ -66,11 +69,11 @@ public class Teklatua
 			{
 				kont ++;
 				egungoKarta = itr.next();
-				System.out.print(kont+".aukera ) "); egungoKarta.imprimatu();
+				System.out.print("	"+kont+") "); egungoKarta.imprimatu();
 			}
 			//7. aukera pasatu egiteko da
-			System.out.println((kont+1)+".aukera ) Pasatu");
-			int aukeratutakoZenb = sc.nextInt();
+			System.out.println("	"+(kont+1)+") Pasatu");
+			System.out.print("	");int aukeratutakoZenb = sc.nextInt();
 				//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
 					//baldin pasa duen
 			if (kont+1 == aukeratutakoZenb)
@@ -86,8 +89,7 @@ public class Teklatua
 		}
 		else
 		{
-			System.out.println("Ez dago aukeratu dezakezun kartarik");
-			this.itxaronEnterArte();
+			System.out.println("	Ez dago aukeratu dezakezun kartarik");
 			return null;
 		}
 		
@@ -141,6 +143,13 @@ public class Teklatua
 		{
 			System.out.println("Ez dago Kartarik zelaian, soilik heroiari eraso diezaiokezu");
 			return null;
+		}
+	}
+	public void imprimatuX_ (int luzeera)
+	{
+		for (int i = 1; i <= luzeera; i++)
+		{
+			System.out.print("_");
 		}
 	}
 }

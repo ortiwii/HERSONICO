@@ -100,19 +100,21 @@ public class Partida
 	}
 	public void hasieratuPartida ()
 	{
-		System.out.println("*****************************************************************************************************************");
-		System.out.println("------------------------------------------------   HEARTHSTONE   ------------------------------------------------");
-		System.out.println("*****************************************************************************************************************");
+		System.out.println("       			*******************************************************************************************************************");
+		System.out.println("       			*                                                   HEARTHSTONE                                                   *");
+		System.out.println("       			*******************************************************************************************************************");	
 		System.out.println("");
-		System.out.println("PARTIDA HASIKO DA :)");
-		System.out.println("__________________________________________________________________________________________________________________");
+		System.out.println("  __________________");
+		System.out.println(" |  JOKOA HASIKO DA |");
+		System.out.println(" |__________________|");
+		System.out.println("");
 		this.kartaGuztiakKargatu();
 		//Jokalariak hasieratu
-			String izena1 = Teklatua.getNireTeklatua().Irakurri("Sartu 1. jokalariaren izena:");
+			String izena1 = Teklatua.getNireTeklatua().Irakurri("	SARTU 1. JOKALARIAREN IZENA:");
 			Jokalaria jok1 = new Jokalaria (izena1);
 			this.listaJokalariak[0] = jok1;
 			
-			String izena2 = Teklatua.getNireTeklatua().Irakurri("Sartu 2. jokalariaren izena:");
+			String izena2 = Teklatua.getNireTeklatua().Irakurri("	SARTU 2. JOKALARIAREN IZENA:");
 			Jokalaria jok2 = new Jokalaria (izena2);
 			this.listaJokalariak[1] = jok2;
 			

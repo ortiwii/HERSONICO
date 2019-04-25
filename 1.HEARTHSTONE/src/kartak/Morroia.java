@@ -67,12 +67,26 @@ public class Morroia extends Karta
 	public void imprimatu ()
 	{
 		if (this.getErasoDezakeen())
-		{
-			System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] ("+super.balioa+" gema)"+"// Eraso AHAL");
+		{	
+			if (this.trebetasuna != null)
+			{
+				System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] "+this.trebetasuna.getIzena()+" trebetasuna ("+super.balioa+" gema)"+"// Eraso AHAL");
+			}
+			else
+			{
+				System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] Ez dauka trebetasunik ("+super.balioa+" gema)"+"// Eraso AHAL");
+			}
 		}
 		else
 		{
-			System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] ("+this.balioa+" gema)"+"// EZIN Eraso");
+			if (this.trebetasuna != null)
+			{
+				System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] "+this.trebetasuna.getIzena()+" trebetasuna ("+this.balioa+" gema)"+"// EZIN Eraso");
+			}
+			else
+			{
+				System.out.println(super.izena+" [Bizitza = "+this.getBizitza()+", Erasoa = "+this.getErasoa()+"] Ez dauka trebetasunik ("+this.balioa+" gema)"+"// EZIN Eraso");
+			}
 		}
 	}
 	public int kartaHoniErasotu (int pErasoa)
