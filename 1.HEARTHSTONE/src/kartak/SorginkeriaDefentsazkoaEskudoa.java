@@ -12,7 +12,6 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 	public SorginkeriaDefentsazkoaEskudoa(int pIdKarta, String pIzena, String pDeskribapena,int pBalioa, int pEskudoKop) 
 	{
 		super (pIdKarta, pIzena, pDeskribapena,pBalioa);
-		// TODO Auto-generated constructor stub
 	}
 	
 	//gainontzeko metodoak

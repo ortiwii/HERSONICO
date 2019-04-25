@@ -43,6 +43,7 @@ public class Jokalaria
 	}
 	public void jokatuTxanda() 
 	{
+		this.zelaikoKartak.kartenEgoeraEguneratu();
 		if (this.gemak < 10)
 		{
 			this.gemak = this.gemak + 1;
@@ -72,6 +73,7 @@ public class Jokalaria
 			}
 			else
 			{
+				aukeratutakoKarta.setZelairaAteratakoTxanda();
 				this.zelaianJarri(aukeratutakoKarta);
 			}
 		}

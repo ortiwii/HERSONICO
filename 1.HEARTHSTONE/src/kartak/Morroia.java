@@ -24,7 +24,8 @@ public class Morroia extends Karta
 //		this.trebetasuna.erabiliTrebetasuna (this);
 			//atributoen hasieratzea
 		this.niriSoilikErasoAhal = false;
-		// TODO
+		this.bizitza = pBizitza;
+		this.erasoa = pErasoa;
 	}
 	
 	//gainontzeko metodoak
@@ -32,7 +33,6 @@ public class Morroia extends Karta
 	{
 		if (this.erasoAhal())
 		{
-			super.setZelairaAteratakoTxanda();
 			//Orain etsaiaren Karten artean, erasoko duen bat aukeratuko du
 			Karta erasotukoDenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta();
 			if (erasotukoDenKarta != null)

@@ -15,7 +15,7 @@ public class Partida
 	private Partida() 
 	{
 		this.listaJokalariak = new Jokalaria[2]; // Se crea un array de 2 posiciones, una para cada jugador.
-		Partida.unekoTxanda=0; // El atributo unekoTxanda se inicializa en 0.
+		Partida.unekoTxanda = 0; // El atributo unekoTxanda se inicializa en 0.
 	}
 	
 	//gainontzeko metodoak
@@ -47,8 +47,7 @@ public class Partida
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 														Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaErasoJarraia());
 				}
-				else 
-					if (egungoInfo[6] == "Diana")
+				else if (egungoInfo[6] == "Diana")
 				{
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaDiana());
@@ -115,6 +114,9 @@ public class Partida
 			String izena2 = Teklatua.getNireTeklatua().Irakurri("Sartu 2. jokalariaren izena:");
 			Jokalaria jok2 = new Jokalaria (izena2);
 			this.listaJokalariak[1] = jok2;
+			
+			//probisioan
+			Partida.kartaGuztiak.inprimatuLista();
 			String irabazlea = this.jokatu();
 			
 			System.out.println("Partida dagoeneko amaitu da, eta irabazlea:");

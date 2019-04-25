@@ -47,7 +47,7 @@ public abstract class Karta
 		return emaitza;
 	}
 	public abstract void imprimatu();
-	protected void setZelairaAteratakoTxanda ()
+	public void setZelairaAteratakoTxanda ()
 	{
 		this.zelairaAteratakoTxanda = Partida.getNirePartida().getUnekoTxanda();
 	}

@@ -94,7 +94,8 @@ public class Teklatua
 	{
 		Karta aukeratutakoKarta ;
 		int kont = 0;
-		if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak() != null || Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getLuzeera() != 0)
+		if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak() != null || 
+			Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getLuzeera() != 0)
 		{
 			System.out.println("Aukeratu etsaiaren karten artean, zein kartari erosotuko diozun:");
 			//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
