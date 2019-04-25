@@ -14,12 +14,12 @@ public class Partida
 	//eraikitzailea
 	private Partida() 
 	{
-		this.listaJokalariak = new Jokalaria[2];
-		Partida.unekoTxanda=0;
+		this.listaJokalariak = new Jokalaria[2]; // Se crea un array de 2 posiciones, una para cada jugador.
+		Partida.unekoTxanda=0; // El atributo unekoTxanda se inicializa en 0.
 	}
 	
 	//gainontzeko metodoak
-	public static Partida getNirePartida()
+	public static synchronized Partida getNirePartida()
 	{
 		if (nirePartida == null)
 		{
@@ -101,7 +101,7 @@ public class Partida
 	}
 	public void hasieratuPartida ()
 	{
-		System.out.println("---------------------------------- HERATHSTONE ----------------------------------");
+		System.out.println("---------------------------------- HEARTHSTONE ----------------------------------");
 		System.out.println("");
 		System.out.println("_________________________________________________________________________________");
 		System.out.println("");
