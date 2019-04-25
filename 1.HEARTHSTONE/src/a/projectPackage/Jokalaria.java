@@ -32,7 +32,7 @@ public class Jokalaria
 		//Gainontzekoak
 		this.heroia=new Heroia();
 		this.gemak=0;
-		
+		//comentario de prueba
 		this.hasieratuJokalaria();
 	}
 	
