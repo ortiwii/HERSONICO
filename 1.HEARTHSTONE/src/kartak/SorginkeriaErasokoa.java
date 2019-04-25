@@ -1,5 +1,8 @@
 package kartak;
 
+import a.projectPackage.Partida;
+import a.projectPackage.Teklatua;
+
 public class SorginkeriaErasokoa extends Sorginkeria 
 {
 	//atributoak
@@ -15,18 +18,17 @@ public class SorginkeriaErasokoa extends Sorginkeria
 	//gainontzeko metodoak
 	public void jokatuKarta()
 	{
-		//TODO
-	}
-	public void egikarituSorginkeria() 
-	{
-		//TODO
-	}
-	public void eginEraso(Karta pKarta)
-	{
-		//TODO
-	}
-	public void imprimatu()
-	{
-		//TODO skere
+		Karta etsaiarenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta();
+		if (etsaiarenKarta != null)
+		{
+			if (etsaiarenKarta instanceof Morroia)
+			{
+				((Morroia)etsaiarenKarta).kartaHoniErasotu(mina);
+			}
+		}
+		else
+		{
+			Partida.getNirePartida().getHeroiEtsaia().puntoBatKendu();
+		}
 	}
 }

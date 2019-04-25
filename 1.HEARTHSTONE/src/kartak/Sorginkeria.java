@@ -11,7 +11,6 @@ public abstract class Sorginkeria extends Karta
 	}
 	
 	//gainontzeko metodoak
-	public abstract void egikarituSorginkeria();
 	public boolean edonoriErasoDiezaioke (ListaKartak pLista)
 	{
 		boolean emaitza = false; 
@@ -24,6 +23,6 @@ public abstract class Sorginkeria extends Karta
 	}
 	public void egoeraEguneratu ()
 	{
-		
+		super.setErasoDezakeen(true);
 	}
 }
