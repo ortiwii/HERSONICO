@@ -1,5 +1,8 @@
 package kartak;
 
+import a.projectPackage.Partida;
+import a.projectPackage.Teklatua;
+
 public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa 
 {
 	//atributoak 
@@ -15,18 +18,11 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 	//gainontzeko metodoak
 	public void jokatuKarta()
 	{
-		//TODO
-	}
-	public void egikarituSorginkeria() 
-	{
-		//TODO
+		Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, zeini eman nahi diziozu "+this.eskudoKop+" eskudo punto?", 
+																		Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
+		
 	}
 	public void emanDefentsa (Karta pKarta)
-	{
-		//TODO
-	}
-
-	public void imprimatu()
 	{
 		//TODO
 	}
