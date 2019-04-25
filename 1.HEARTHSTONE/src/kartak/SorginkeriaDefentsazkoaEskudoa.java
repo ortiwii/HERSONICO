@@ -20,10 +20,11 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 	{
 		Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, zeini eman nahi diziozu "+this.eskudoKop+" eskudo punto?", 
 																		Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
-		
+		this.emanDefentsa(nireKarta);
 	}
 	public void emanDefentsa (Karta pKarta)
 	{
-		//TODO
+		((Morroia)pKarta).kartaHoniErasotu(eskudoKop*(-1));
+		pKarta.imprimatu();
 	}
 }
