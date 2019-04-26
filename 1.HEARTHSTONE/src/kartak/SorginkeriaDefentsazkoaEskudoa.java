@@ -24,6 +24,7 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 																		Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
 			this.emanDefentsa(nireKarta);
 			
+			Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa); 
 		}
 	}
 	public void emanDefentsa (Karta pKarta)

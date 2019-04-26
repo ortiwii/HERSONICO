@@ -28,6 +28,7 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 			if (pKarta != null)
 			{	
 				((Morroia)pKarta).kartaHoniErasotu(this.sendatuKop*(-1));
+				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 				System.out.print("	");pKarta.imprimatu();
 			}
 			else

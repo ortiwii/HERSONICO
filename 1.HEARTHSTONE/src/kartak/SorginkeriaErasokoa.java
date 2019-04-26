@@ -31,7 +31,9 @@ public class SorginkeriaErasokoa extends Sorginkeria
 		else
 		{
 			Partida.getNirePartida().getHeroiEtsaia().puntoBatKendu();
+			System.out.print("	 --> "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
 		}
+		Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 	}
 	public void imprimatu ()
 	{
