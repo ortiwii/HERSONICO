@@ -58,6 +58,7 @@ public class Morroia extends Karta
 				{
 					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalaria().getIzena()+"-ren "+this.izena+" "+this.bizitza+" bizitza puntu ditu");
 				}
+				
 				else if (((Morroia)erasotukoDenKarta).bizitza > 0)
 				{
 					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+erasotukoDenKarta.izena+" "+((Morroia)erasotukoDenKarta).bizitza+" bizitza puntu ditu");

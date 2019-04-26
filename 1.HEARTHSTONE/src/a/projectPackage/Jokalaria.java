@@ -60,6 +60,7 @@ public class Jokalaria
 	public void konprobatuEaKartarikHildaDagoen ()
 	{
 		this.zelaikoKartak.konprobatuEaKartarikHildaDagoen();
+		Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().konprobatuEaKartarikHildaDagoen();
 	}
 	public void jokatuTxanda() 
 	{
@@ -142,6 +143,7 @@ public class Jokalaria
 		}
 		System.out.println("    ------------------------------------------------------------------------------------------");
 		Partida.getNirePartida().kartenEgoeraEguneratu();
+		Partida.getNirePartida().jokatuTrebetasunak();
 	}
 	private void lapurtu () 
 	{
