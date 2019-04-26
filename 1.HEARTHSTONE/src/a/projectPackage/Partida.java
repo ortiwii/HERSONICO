@@ -132,6 +132,7 @@ public class Partida
 			this.inprimatuPartida();
 			
 			this.hurrengoTxanda();
+			
 		}
 		
 		return this.irabazia().getIzena();
