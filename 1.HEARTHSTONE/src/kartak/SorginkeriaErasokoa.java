@@ -25,7 +25,15 @@ public class SorginkeriaErasokoa extends Sorginkeria
 			if (etsaiarenKarta instanceof Morroia)
 			{
 				((Morroia)etsaiarenKarta).kartaHoniErasotu(mina);
-				System.out.print("	");etsaiarenKarta.imprimatu();
+				if (((Morroia) etsaiarenKarta).getBizitza() <= 0)
+				{
+					System.out.println("	--> "+ ((Morroia)etsaiarenKarta).getIzena()+" HILDA !!!");
+					Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().kenduKarta(etsaiarenKarta);
+				}
+				else
+				{
+					System.out.print("	");etsaiarenKarta.imprimatu();
+				}
 			}
 		}
 		else
