@@ -42,20 +42,23 @@ public class Partida
 				String [] egungoInfo = morroiak[aux].split("-");
 				//int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna
 				Morroia egungoKarta;
-				if (egungoInfo[6] == "Eraso Jarraia")
+				if (egungoInfo[6].equalsIgnoreCase("Eraso Jarraia"))
 				{
+					TrebetasunaErasoJarraia treb = new TrebetasunaErasoJarraia();
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
-														Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaErasoJarraia());
+														Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), treb);
 				}
-				else if (egungoInfo[6] == "Diana")
+				else if (egungoInfo[6].equalsIgnoreCase("Diana"))
 				{
+					TrebetasunaDiana treb = new TrebetasunaDiana();
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
-							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaDiana());
+							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), treb);
 				}
-				else if (egungoInfo[6] == "Vendetta")
+				else if (egungoInfo[6].equalsIgnoreCase("Vendetta"))
 				{
+					TrebetasunaVendetta treb = new TrebetasunaVendetta();
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
-							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaVendetta());
+							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), treb);
 				}
 				else
 				{
@@ -109,6 +112,7 @@ public class Partida
 		System.out.println(" |__________________|");
 		System.out.println("");
 		this.kartaGuztiakKargatu();
+
 		//Jokalariak hasieratu
 			String izena1 = Teklatua.getNireTeklatua().Irakurri("	SARTU 1. JOKALARIAREN IZENA:");
 			Jokalaria jok1 = new Jokalaria (izena1);
