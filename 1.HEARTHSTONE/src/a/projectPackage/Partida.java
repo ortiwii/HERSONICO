@@ -42,17 +42,17 @@ public class Partida
 				String [] egungoInfo = morroiak[aux].split("-");
 				//int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna
 				Morroia egungoKarta;
-				if (egungoInfo[6] == "Eraso Jarraia")
+				if (egungoInfo[6].equalsIgnoreCase("Eraso Jarraia"))
 				{
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 														Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaErasoJarraia());
 				}
-				else if (egungoInfo[6] == "Diana")
+				else if (egungoInfo[6].equalsIgnoreCase("Diana"))
 				{
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaDiana());
 				}
-				else if (egungoInfo[6] == "Vendetta")
+				else if (egungoInfo[6].equalsIgnoreCase("Vendetta"))
 				{
 					egungoKarta = new Morroia (Integer.parseInt(egungoInfo[0]),egungoInfo[1],egungoInfo[2], Integer.parseInt(egungoInfo[3]), 
 							Integer.parseInt(egungoInfo[4]), Integer.parseInt(egungoInfo[5]), new TrebetasunaVendetta());
