@@ -43,13 +43,25 @@ public class Jokalaria
 	}
 	private void gemenEguneraketa ()
 	{
-		if (Partida.getNirePartida().getUnekoTxanda() < 9)
+//		if (Partida.getNirePartida().getUnekoTxanda() < 9)
+//		{
+//			this.gemak = Partida.getNirePartida().getUnekoTxanda()+1; 
+//		}
+//		else
+//		{
+//			this.gemak = 10;
+//		}
+		// Esto estaba mal. Porque las txandas suben de 0 a 19 y si estás en la txanda 4 que es la segunda del jugador2, tienes 4
+		// gemas acumuladas cuando deberías tener 2 si no has gastado.
+
+
+		/* Como las txandak suben de uno en uno, empezando por el 0, se me ha ocurrido hacer lo siguiente para arreglar el fallo
+		de que las gemas suban mal. Los turnos suben desde el turno 0 hasta el turno 20 (Porque cada jugador tiene 10 turnos y 
+		empieza a contar desde 0)*/
+		
+		if(this.gemak<10)
 		{
-			this.gemak = Partida.getNirePartida().getUnekoTxanda()+1;
-		}
-		else
-		{
-			this.gemak = 10;
+			this.gemak++;
 		}
 	}
 	public void kartenEgoeraEguneratu ()
