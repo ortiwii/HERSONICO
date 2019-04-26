@@ -1,9 +1,5 @@
 package kartak;
 
-import java.awt.Color;
-
-import javax.swing.JLabel;
-
 import a.projectPackage.Partida;
 
 public abstract class Karta 

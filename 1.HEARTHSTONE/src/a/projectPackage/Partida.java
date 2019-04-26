@@ -184,6 +184,11 @@ public class Partida
 		this.listaJokalariak[1].kartenEgoeraEguneratu();
 		this.listaJokalariak[1].konprobatuEaKartarikHildaDagoen();
 	}
+	public void jokatuTrebetasunak ()
+	{
+		this.listaJokalariak[0].getNireZelaikoKartak().trebetasunakEgikaritu();
+		this.listaJokalariak[1].getNireZelaikoKartak().trebetasunakEgikaritu();
+	}
 		//getters
 	public Jokalaria getUnekoJokalaria ()
 	{

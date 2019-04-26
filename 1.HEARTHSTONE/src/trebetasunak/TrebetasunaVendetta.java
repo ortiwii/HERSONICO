@@ -8,7 +8,7 @@ public class TrebetasunaVendetta extends Trebetasuna
 	//eraikitzailea
 	public TrebetasunaVendetta() 
 	{
-		super ("Vendetta", "momentu kritiko batean dagoenean, eraso puntuak %150 batean igoko dira");
+		super ("Vendetta", "momentu kritiko batean dagoenean, eraso puntuak %200 batean igoko dira");
 	}
 
 	//gainontzeko metodoak
@@ -16,7 +16,7 @@ public class TrebetasunaVendetta extends Trebetasuna
 	{
 		if (pMorroia.getBizitza() == 1)
 		{
-			
+			pMorroia.setErasoa(pMorroia.getErasoa()*2);
 		}
 	}
 }

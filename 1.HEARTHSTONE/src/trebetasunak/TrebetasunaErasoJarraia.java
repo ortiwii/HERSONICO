@@ -15,6 +15,6 @@ public class TrebetasunaErasoJarraia extends Trebetasuna
 	//gainontzeko metodoak
 	public void erabiliTrebetasuna(Morroia pMorroia)
 	{
-		pMorroia.setErasoJarraia();
+		pMorroia.setErasoDezakeen(true);
 	}
 }

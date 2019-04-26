@@ -112,6 +112,7 @@ public class Jokalaria
 		
 		//ondoren karten egoera eguneratu beharko dugu, batzuek eraso dezakeetelako, eta beste batzuk ez, eta baten bat hilda egon daitekeelako
 		Partida.getNirePartida().kartenEgoeraEguneratu();
+		Partida.getNirePartida().jokatuTrebetasunak();
 		
 		//Amaitzeko, eraso dezakeen bitartean eraso prozesua jarraituko du
 		

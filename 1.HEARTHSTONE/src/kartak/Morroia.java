@@ -2,10 +2,7 @@
 
 import a.projectPackage.Partida;
 import a.projectPackage.Teklatua;
-import trebetasunak.Trebetasuna;
-import trebetasunak.TrebetasunaDiana;
-import trebetasunak.TrebetasunaErasoJarraia;
-
+import trebetasunak.*;
 public class Morroia extends Karta 
 {
 	//atributoak
@@ -21,7 +18,10 @@ public class Morroia extends Karta
 		super (pIdKarta, pIzena, pDeskribapena, pBalioa, false);
 			//trebetasuna
 		this.trebetasuna = pTrebetasuna;
-//		this.trebetasuna.erabiliTrebetasuna (this);
+		if (pTrebetasuna != null)
+		{
+			this.trebetasuna.erabiliTrebetasuna (this);
+		}
 			//atributoen hasieratzea
 		this.niriSoilikErasoAhal = false;
 		this.bizitza = pBizitza;
@@ -138,15 +138,17 @@ public class Morroia extends Karta
 		
 	}
 	//trebetasunak
+	public void egikarituTrebetasuna ()
+	{
+		if (this.trebetasuna != null)
+		{
+			this.trebetasuna.erabiliTrebetasuna(this);
+		}
+	}
 		//diana
 	public void setDiana ()
 	{
 		this.niriSoilikErasoAhal = true;
-	}
-		//eraso jarraia
-	public void setErasoJarraia ()
-	{
-		super.setErasoDezakeen(true);
 	}
 	//getters
 	public int getErasoa ()
@@ -160,5 +162,10 @@ public class Morroia extends Karta
 	public boolean getNiriSoilikErasoAhal ()
 	{
 		return this.niriSoilikErasoAhal;
+	}
+	//setters
+	public void setErasoa (int pErasoa)
+	{
+		this.erasoa = pErasoa;
 	}
 }

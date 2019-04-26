@@ -203,4 +203,17 @@ public class ListaKartak
 		}
 		return listaKartak;
 	}
+	public void trebetasunakEgikaritu ()
+	{
+		Iterator <Karta> itr = this.getIteradorea();
+		Karta egungoKarta;
+		while (itr.hasNext())
+		{
+			egungoKarta = itr.next();
+			if (egungoKarta instanceof Morroia)
+			{
+				((Morroia)egungoKarta).egikarituTrebetasuna();
+			}
+		}
+	}
 }
