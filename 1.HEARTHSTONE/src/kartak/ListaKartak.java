@@ -111,7 +111,7 @@ public class ListaKartak
 				{
 					if ( ((Morroia)egungoKarta).getBizitza() <= 0 )
 					{
-						System.out.println("--> "+ ((Morroia)egungoKarta).getIzena()+" HILDA !!!");
+						System.out.println("	--> "+ ((Morroia)egungoKarta).getIzena()+" HILDA !!!");
 					}
 					else
 					{

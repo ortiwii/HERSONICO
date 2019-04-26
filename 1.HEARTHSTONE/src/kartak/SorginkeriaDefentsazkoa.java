@@ -1,7 +1,5 @@
 package kartak;
 
-import a.projectPackage.Teklatua;
-
 public abstract class SorginkeriaDefentsazkoa extends Sorginkeria 
 {
 	//atributoak

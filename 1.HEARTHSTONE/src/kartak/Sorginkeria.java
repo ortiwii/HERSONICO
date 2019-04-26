@@ -16,11 +16,7 @@ public abstract class Sorginkeria extends Karta
 		boolean emaitza = false; 
 		return emaitza;
 	}
-	public void imprimatu ()
-	{
-		System.out.print("Sorginkerria:");
-		System.out.println(super.izena+" ("+super.balioa+" gema)");
-	}
+	public abstract void imprimatu ();
 	public void egoeraEguneratu ()
 	{
 		super.setErasoDezakeen(true);

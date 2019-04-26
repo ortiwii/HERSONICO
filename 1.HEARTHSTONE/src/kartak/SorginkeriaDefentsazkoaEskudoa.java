@@ -18,21 +18,29 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 	//gainontzeko metodoak
 	public void jokatuKarta()
 	{
-		Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, zeini eman nahi diziozu "+this.eskudoKop+" eskudo punto?", 
+		if (Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak().getLuzeera() != 0)
+		{
+			Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("	-> Zure zelaiko karten artean, zeini eman nahi diziozu "+this.eskudoKop+" eskudo punto?", 
 																		Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
-		this.emanDefentsa(nireKarta);
+			this.emanDefentsa(nireKarta);
+			
+		}
 	}
 	public void emanDefentsa (Karta pKarta)
 	{
 		if (pKarta != null)
 		{		
 			((Morroia)pKarta).kartaHoniErasotu(eskudoKop*(-1));
-			pKarta.imprimatu();
+			System.out.print("	");pKarta.imprimatu();
 		}
 		else
 		{
-			System.out.println("Ez diozu inori emango defentsa");
+			System.out.println("	Ez diozu inori emango defentsa");
 		}
 		
+	}
+	public void imprimatu ()
+	{
+		System.out.println("Sorginkeria: "+super.getIzena()+", "+this.eskudoKop+" eskudo punto ematen ditu ("+this.balioa+" gema)");
 	}
 }

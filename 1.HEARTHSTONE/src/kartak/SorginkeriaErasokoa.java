@@ -18,17 +18,23 @@ public class SorginkeriaErasokoa extends Sorginkeria
 	//gainontzeko metodoak
 	public void jokatuKarta()
 	{
-		Karta etsaiarenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta();
+		String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-en zelaiko karten artean nori "+this.mina+" puntorekin erasotuko dion esan:";
+		Karta etsaiarenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta(mezua);
 		if (etsaiarenKarta != null)
 		{
 			if (etsaiarenKarta instanceof Morroia)
 			{
 				((Morroia)etsaiarenKarta).kartaHoniErasotu(mina);
+				System.out.print("	");etsaiarenKarta.imprimatu();
 			}
 		}
 		else
 		{
 			Partida.getNirePartida().getHeroiEtsaia().puntoBatKendu();
 		}
+	}
+	public void imprimatu ()
+	{
+		System.out.println("Sorginkeria: "+super.getIzena()+", "+this.mina+" bizitza punto kentzen dizkio karta etsai bati ("+this.balioa+" gema)");
 	}
 }

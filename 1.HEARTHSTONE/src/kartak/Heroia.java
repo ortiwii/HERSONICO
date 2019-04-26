@@ -41,6 +41,6 @@ public class Heroia
 	}
 	public void inprimatu ()
 	{
-		System.out.println("Heroia, "+this.bizitza+"bizitza puntu");
+		System.out.println("Heroia, "+this.bizitza+" bizitza puntu");
 	}
 }

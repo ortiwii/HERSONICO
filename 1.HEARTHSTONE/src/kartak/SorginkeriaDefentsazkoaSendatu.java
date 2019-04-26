@@ -19,7 +19,7 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 		//gainontzeko metodoak
 		public void jokatuKarta ()
 		{
-			Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("Zure zelaiko karten artean, zeini eman nahi diziozu "+this.sendatuKop+" bizitza punto?", 
+			Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("	Zure zelaiko karten artean, zeini eman nahi diziozu "+this.sendatuKop+" bizitza punto?", 
 					Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
 			this.emanDefentsa(nireKarta);
 		}
@@ -28,12 +28,15 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 			if (pKarta != null)
 			{	
 				((Morroia)pKarta).kartaHoniErasotu(this.sendatuKop*(-1));
-				pKarta.imprimatu();
+				System.out.print("	");pKarta.imprimatu();
 			}
 			else
 			{
 				System.out.println("Ez diozu inori emango defentsa");
 			}
 		}
-
+		public void imprimatu ()
+		{
+			System.out.println("Sorginkeria: "+super.getIzena()+", "+this.sendatuKop+" bizitza punto sendatzen ditu ("+this.balioa+" gema)");
+		}
 }

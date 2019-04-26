@@ -34,7 +34,8 @@ public class Morroia extends Karta
 		if (this.erasoAhal())
 		{
 			//Orain etsaiaren Karten artean, erasoko duen bat aukeratuko du
-			Karta erasotukoDenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta();
+			String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-en zelaiko karten artean nori erasotuko dion esan:";
+			Karta erasotukoDenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta(mezua);
 			if (erasotukoDenKarta != null)
 			{
 				//Erasoa egin behar da
@@ -51,10 +52,21 @@ public class Morroia extends Karta
 				
 				//Egoeraren eguneraketa
 				super.setErasoDezakeen(false);
+				
+				//imprimaketa
+				if (this.bizitza > 0)
+				{
+					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalaria().getIzena()+"-ren "+this.izena+" "+this.bizitza+" bizitza puntu ditu");
+				}
+				else if (((Morroia)erasotukoDenKarta).bizitza > 0)
+				{
+					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+erasotukoDenKarta.izena+" "+((Morroia)erasotukoDenKarta).bizitza+" bizitza puntu ditu");
+				}
 			}
 			else
 			{	//	=null bada esan nahi du Heroiari eraso egin nahi diola
 				Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(this.erasoa);
+				System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" puntu ditu orain");
 			}
 		}
 		else

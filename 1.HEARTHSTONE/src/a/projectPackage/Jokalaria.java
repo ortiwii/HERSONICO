@@ -3,12 +3,8 @@
 import java.util.Iterator;
 
 import kartak.Heroia;
-import kartak.Karta;
-import kartak.ListaKartak;
-import kartak.Morroia;
-import kartak.Sorginkeria;
+import kartak.*;
 
-//viva er beti
 public class Jokalaria 
 {
 	//atributoak
@@ -40,12 +36,14 @@ public class Jokalaria
 	public void hasieratuJokalaria ()
 	{
 		this.lapurtzekoKartak = Partida.kartaGuztiak.get40Karta();
+		this.lapurtu();
+		this.lapurtu();
 	}
 	private void gemenEguneraketa ()
 	{
-		if (Partida.getNirePartida().getUnekoTxanda() < 9)
+		if (Partida.getNirePartida().getUnekoTxanda()/2 < 9)
 		{
-			this.gemak = Partida.getNirePartida().getUnekoTxanda()+1;
+			this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
 		}
 		else
 		{
@@ -136,7 +134,9 @@ public class Jokalaria
 				//konprobatu ea kartaren bat hilda dagoen
 				this.konprobatuEaKartarikHildaDagoen();
 			}
+			Teklatua.getNireTeklatua().itxaronEnterArte();
 		}
+		System.out.println("    ------------------------------------------------------------------------------------------");
 		Partida.getNirePartida().kartenEgoeraEguneratu();
 	}
 	private void lapurtu () 
@@ -155,8 +155,24 @@ public class Jokalaria
 		}
 		else if (pKarta instanceof Sorginkeria)
 		{
-			this.eskukoKartak.kenduKarta(pKarta);
-			pKarta.jokatuKarta();
+			if (pKarta instanceof SorginkeriaDefentsazkoa)
+			{
+				if (this.zelaikoKartak.getLuzeera() != 0)
+				{
+					this.eskukoKartak.kenduKarta(pKarta);
+					pKarta.jokatuKarta();
+				}
+				else 
+				{
+					System.out.println("	-> Ez daude kartarik zelaian, beraz ezin diezaiokezu inori defentsa eman");
+					pKarta.setErasoDezakeen(false);
+				}
+			}
+			else
+			{
+				this.eskukoKartak.kenduKarta(pKarta);
+				pKarta.jokatuKarta();
+			}
 		}
 	}
 	private boolean aukeratuAhalDu()
@@ -185,30 +201,26 @@ public class Jokalaria
 		}
 		return emaitza;
 	}
-	public void imprimatu()
-	{
-		//TODO
-	}
-	private boolean erasoDezake()
-	{
-		boolean emaitza = true;
-		//baldin partida irabazia ez dagoen
-		if (Partida.getNirePartida().irabazia() != null)
-		{
-			emaitza = false;
-		}
-		//baldin kartak gelditzen zaizkion zelaian
-		if (this.zelaikoKartak.getLuzeera() == 0)
-		{
-			emaitza = false;
-		}
-		//Baldin erasorik egin ezin duten
-		if (!this.zelaikoKartak.erasoDezakete())
-		{
-			emaitza = false;
-		}
-		return emaitza;
-	}
+//	private boolean erasoDezake()
+//	{
+//		boolean emaitza = true;
+//		//baldin partida irabazia ez dagoen
+//		if (Partida.getNirePartida().irabazia() != null)
+//		{
+//			emaitza = false;
+//		}
+//		//baldin kartak gelditzen zaizkion zelaian
+//		if (this.zelaikoKartak.getLuzeera() == 0)
+//		{
+//			emaitza = false;
+//		}
+//		//Baldin erasorik egin ezin duten
+//		if (!this.zelaikoKartak.erasoDezakete())
+//		{
+//			emaitza = false;
+//		}
+//		return emaitza;
+//	}
 	public boolean irabazia ()
 	{
 		boolean emaitza = false;
@@ -216,15 +228,6 @@ public class Jokalaria
 		{
 			emaitza =  true;
 		}
-		return emaitza;
-	}
-	public boolean txandaBukatu()
-	{
-		//Baldin !aukeratuAhalDu()
-		//Baldin Pasatu Duen
-		//Baldin Heroia hil
-		//TODO
-		boolean emaitza = false;
 		return emaitza;
 	}
 		//setters
