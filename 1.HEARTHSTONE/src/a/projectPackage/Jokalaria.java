@@ -1,4 +1,4 @@
-	package a.projectPackage;
+package a.projectPackage;
 
 import java.util.Iterator;
 
@@ -42,6 +42,9 @@ public class Jokalaria
 	private void gemenEguneraketa ()
 	{
 		if (Partida.getNirePartida().getUnekoTxanda()/2 < 9)
+
+		
+		if(this.gemak<10)
 		{
 			this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
 		}
