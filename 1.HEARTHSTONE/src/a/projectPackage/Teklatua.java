@@ -43,6 +43,7 @@ public class Teklatua
 	public void itxaronEnterArte ()
 	{
 		System.out.print("\n	Sakatu enter jarraitzeko:");
+		
 		String entrada  ="";
 		 do{
 		    entrada  = sc.nextLine();
