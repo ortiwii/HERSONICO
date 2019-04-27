@@ -1,5 +1,6 @@
 package a.projectPackage;
 
+import java.awt.event.KeyEvent;
 import java.util.Iterator;
 import java.util.Scanner;
 import kartak.Karta;
@@ -41,20 +42,28 @@ public class Teklatua
     }
 	public void itxaronEnterArte ()
 	{
-		boolean salataria = false;
-		String aux = "";
-		String textoa = "";
-
 		System.out.print("\n	Sakatu enter jarraitzeko:");
-		while (!salataria)
-		{
-			textoa = sc.nextLine();
-			if (aux != textoa)
-			{
-				salataria = true;
-				System.out.println("");
-			}
-		}
+		String entrada  ="";
+		 do{
+		    entrada  = sc.nextLine();
+		    System.out.println(entrada);
+		 }
+		 while(!entrada.equals("")); 
+
+//		boolean salataria = false;
+//		String aux = "";
+//		String textoa = "";
+//
+//		System.out.print("\n	Sakatu enter jarraitzeko:");
+//		while (!salataria)
+//		{
+//			textoa = sc.nextLine();
+//			if (aux != textoa)
+//			{
+//				salataria = true;
+//				System.out.println("");
+//			}
+//		}
 	}
 	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak)
 	{
@@ -151,5 +160,13 @@ public class Teklatua
 		{
 			System.out.print("_");
 		}
+	}
+	public int baiAlaEzAukera (String pMezua)
+	{
+		System.out.println(pMezua);
+		System.out.print("	");System.out.println("1) Bai");
+		System.out.print("	");System.out.println("0) Ez");
+		System.out.print("	");int emaitza = sc.nextInt();
+		return emaitza;
 	}
 }

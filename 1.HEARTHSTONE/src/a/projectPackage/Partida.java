@@ -27,6 +27,47 @@ public class Partida
 		}
 		return nirePartida;
 	}
+	private void deskripzioaInprimatu ()
+	{
+		String textoGuztia = Fitxategiak.getFitxategiak().irakurriTxt("bin\\Deskripzioa.txt");
+		String [] deskripzioa = textoGuztia.split(";");
+		for (int aux = 0; aux < deskripzioa.length; aux++)
+		{
+			System.out.println(deskripzioa[aux]);
+		}
+		Teklatua.getNireTeklatua().itxaronEnterArte();
+	}
+	private void deskripzioaNahiDuenGaldetu ()
+	{
+		int aukera = Teklatua.getNireTeklatua().baiAlaEzAukera("    Jokoaren deskribapen labur bat nahi duzu ?");
+		if (aukera == 1)
+		{
+			this.deskripzioaInprimatu();
+			aukera = Teklatua.getNireTeklatua().baiAlaEzAukera("    Karta guztiak zeintzuk diren jakin nahi duzu ?");
+			if (aukera == 1)
+			{
+				System.out.println("\n     Hauek dira karta guztiak : ");
+				
+				boolean salataria = false;
+				while (!salataria)
+				{
+					Karta egungoKarta = Teklatua.getNireTeklatua().irakurriAukera("\n    Karta guzti hauetatik deskribapenen bat irakurri nahi duzu ?", Partida.kartaGuztiak);
+					if (egungoKarta == null)
+					{
+						System.out.println("    Ondo.");
+						salataria = true;
+						
+					}
+					else
+					{
+						System.out.println("    -> "+egungoKarta.getIzena()+": "+egungoKarta.getDeskribapena());
+						System.out.println(" ");Teklatua.getNireTeklatua().itxaronEnterArte();
+					}
+				}
+			}
+		}
+		
+	}
 	private void kartaGuztiakKargatu ()
 	{
 		String textoGuztia = Fitxategiak.getFitxategiak().irakurriTxt("bin\\kartak.txt");
@@ -100,15 +141,17 @@ public class Partida
 	}
 	public void hasieratuPartida ()
 	{
+		this.kartaGuztiakKargatu();
 		System.out.println("\n\n       			*******************************************************************************************************************");
 		System.out.println("       			*                                                   HEARTHSTONE                                                   *");
 		System.out.println("       			*******************************************************************************************************************");	
 		System.out.println("");
+		//Deskripzioa nahi duen galdetu
+		this.deskripzioaNahiDuenGaldetu();
 		System.out.println("  __________________");
 		System.out.println(" |  JOKOA HASIKO DA |");
 		System.out.println(" |__________________|");
 		System.out.println("");
-		this.kartaGuztiakKargatu();
 		//Jokalariak hasieratu
 			String izena1 = Teklatua.getNireTeklatua().Irakurri("	SARTU 1. JOKALARIAREN IZENA:");
 			Jokalaria jok1 = new Jokalaria (izena1);

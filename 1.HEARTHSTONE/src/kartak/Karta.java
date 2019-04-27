@@ -83,5 +83,9 @@ public abstract class Karta
 		{
 			return this.izena;
 		}
+		public String getDeskribapena ()
+		{
+			return this.deskribapena;
+		}
 }
 	
