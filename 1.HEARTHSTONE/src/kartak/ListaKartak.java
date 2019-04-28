@@ -5,6 +5,8 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.Random;
 
+import a.projectPackage.Partida;
+
 public class ListaKartak 
 {
 	//atributoak
@@ -20,10 +22,6 @@ public class ListaKartak
 	public Iterator<Karta> getIteradorea()
 	{
 		return lista.iterator();
-	}
-	public void barajatu()
-	{
-		Collections.shuffle(lista);	
 	}
 	public Karta lapurtuKarta ()
 	{
@@ -193,15 +191,19 @@ public class ListaKartak
 	{
 		return this.lista.size();
 	}
-	public ListaKartak get40Karta ()
+	public ArrayList<Karta> get40Karta ()
 	{
-		ListaKartak listaKartak = new ListaKartak();
-		Random rand = new Random ();
-		for (int i = 0; i < 40; i++)
-		{
-			listaKartak.gehituKarta(this.lista.get(rand.nextInt(this.lista.size()-1)));
-		}
+		ArrayList<Karta> listaKartak = (ArrayList<Karta>) lista.clone();
+		Collections.shuffle(listaKartak);	
+		
 		return listaKartak;
+//		Random rand = new Random ();
+//		for (int i = 39; i <= 0 ; i--)
+//		{
+//			
+//			listaKartak.gehituKarta(this.lista.get(rand.nextInt(this.lista.size()-1)));
+//		}
+//		return listaKartak;
 	}
 	public void trebetasunakEgikaritu ()
 	{
@@ -215,5 +217,9 @@ public class ListaKartak
 				((Morroia)egungoKarta).egikarituTrebetasuna();
 			}
 		}
+	}
+	public void setLista (ArrayList<Karta> lista)
+	{
+		this.lista = lista;
 	}
 }

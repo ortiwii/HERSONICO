@@ -35,7 +35,7 @@ public class Jokalaria
 	//gainontzeko metodoak
 	public void hasieratuJokalaria ()
 	{
-		this.lapurtzekoKartak = Partida.kartaGuztiak.get40Karta();
+		this.lapurtzekoKartak.setLista(Partida.kartaGuztiak.get40Karta());
 		this.lapurtu();
 		this.lapurtu();
 	}
