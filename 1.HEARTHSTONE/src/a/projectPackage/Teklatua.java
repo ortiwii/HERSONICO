@@ -109,6 +109,7 @@ public class Teklatua
 					//7. aukera pasatu egiteko da
 					System.out.println("	"+(kont+1)+") Pasatu");
 					System.out.print("	");int aukeratutakoZenb = sc.nextInt();
+					sc.next();
 						//loop-tik ateratzeko
 					salataria = true;
 					//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
