@@ -195,15 +195,7 @@ public class ListaKartak
 	{
 		ArrayList<Karta> listaKartak = (ArrayList<Karta>) lista.clone();
 		Collections.shuffle(listaKartak);	
-		
 		return listaKartak;
-//		Random rand = new Random ();
-//		for (int i = 39; i <= 0 ; i--)
-//		{
-//			
-//			listaKartak.gehituKarta(this.lista.get(rand.nextInt(this.lista.size()-1)));
-//		}
-//		return listaKartak;
 	}
 	public void trebetasunakEgikaritu ()
 	{

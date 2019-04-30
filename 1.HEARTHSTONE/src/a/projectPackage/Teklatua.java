@@ -1,6 +1,8 @@
 package a.projectPackage;
 
-import java.awt.event.KeyEvent;
+import salbuespenak.*;
+
+import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
 import kartak.Karta;
@@ -66,43 +68,74 @@ public class Teklatua
 //			}
 //		}
 	}
-	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak)
+//	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak)
+//	{
+//		boolean salataria = false;
+//		Karta emaitza = null;
+//		do
+//		{
+//			try 
+//			{
+//				emaitza = this.irakurriAukera2(pAurrekoMezua, pAukerak);
+//				salataria = true;
+//			} 
+//			catch (InputMismatchException e) 
+//			{
+//				System.out.println("	 -- Ez duzu zenbaki oso bat sartu, berriro ere saiatu --");
+//			}
+//		}
+//		while (!salataria);
+//		return emaitza;
+//	}
+	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak) throws InputMismatchException
 	{
-		
-		System.out.println(pAurrekoMezua);
-		if (pAukerak != null )
+		boolean salataria = false;
+		Karta egungoKarta = null;
+		while (!salataria)
 		{
-			Iterator <Karta> itr = pAukerak.getIteradorea();
-			int kont = 0;
-			Karta egungoKarta;
-			while (itr.hasNext())
+			try
 			{
-				kont ++;
-				egungoKarta = itr.next();
-				System.out.print("	"+kont+") "); egungoKarta.imprimatu();
+				System.out.println(pAurrekoMezua);
+				if (pAukerak != null )
+				{
+					Iterator <Karta> itr = pAukerak.getIteradorea();
+					int kont = 0;
+					while (itr.hasNext())
+					{
+						kont ++;
+						egungoKarta = itr.next();
+						System.out.print("	"+kont+") "); egungoKarta.imprimatu();
+					}
+					//7. aukera pasatu egiteko da
+					System.out.println("	"+(kont+1)+") Pasatu");
+					System.out.print("	");int aukeratutakoZenb = sc.nextInt();
+						//loop-tik ateratzeko
+					salataria = true;
+					//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
+						//baldin pasa duen
+					if (kont+1 == aukeratutakoZenb)
+					{
+						egungoKarta = null;
+					}
+						//baldin karta bat aukeratu duen
+					else
+					{
+						egungoKarta = pAukerak.getPosizioHonetakoKarta(aukeratutakoZenb);
+					}
+				}
+				else
+				{
+					System.out.println("	Ez dago aukeratu dezakezun kartarik");
+					egungoKarta = null;
+				}
+				salataria = true;
 			}
-			//7. aukera pasatu egiteko da
-			System.out.println("	"+(kont+1)+") Pasatu");
-			System.out.print("	");int aukeratutakoZenb = sc.nextInt();
-				//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
-					//baldin pasa duen
-			if (kont+1 == aukeratutakoZenb)
+			catch (InputMismatchException e) 
 			{
-				egungoKarta = null;
+				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu");
 			}
-					//baldin karta bat aukeratu duen
-			else
-			{
-				egungoKarta = pAukerak.getPosizioHonetakoKarta(aukeratutakoZenb);
-			}
-			return egungoKarta;
 		}
-		else
-		{
-			System.out.println("	Ez dago aukeratu dezakezun kartarik");
-			return null;
-		}
-		
+		return egungoKarta;
 	}
 	public Karta irakurriEtsaiarenKarta (String mezua)
 	{
