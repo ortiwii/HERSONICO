@@ -2,6 +2,8 @@ package a.projectPackage;
 
 import salbuespenak.*;
 
+import java.io.BufferedReader;
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.Iterator;
 import java.util.Scanner;
@@ -42,51 +44,30 @@ public class Teklatua
 		int emaitza = sc.nextInt();
 		return emaitza ;
     }
-	public void itxaronEnterArte ()
-	{
-		System.out.print("\n	Sakatu enter jarraitzeko:");
-		
-		String entrada  ="";
-		 do{
-		    entrada  = sc.nextLine();
-		    System.out.println(entrada);
-		 }
-		 while(!entrada.equals("")); 
-
-//		boolean salataria = false;
-//		String aux = "";
-//		String textoa = "";
-//
-//		System.out.print("\n	Sakatu enter jarraitzeko:");
-//		while (!salataria)
-//		{
-//			textoa = sc.nextLine();
-//			if (aux != textoa)
-//			{
-//				salataria = true;
-//				System.out.println("");
-//			}
-//		}
-	}
-//	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak)
+//	private void enterEzabatu ()
 //	{
-//		boolean salataria = false;
-//		Karta emaitza = null;
-//		do
+//		if (sc.hasNext(""))
 //		{
-//			try 
-//			{
-//				emaitza = this.irakurriAukera2(pAurrekoMezua, pAukerak);
-//				salataria = true;
-//			} 
-//			catch (InputMismatchException e) 
-//			{
-//				System.out.println("	 -- Ez duzu zenbaki oso bat sartu, berriro ere saiatu --");
-//			}
+//			String na = sc.nextLine();
 //		}
-//		while (!salataria);
-//		return emaitza;
 //	}
+	public void itxaronEnterArte () 
+	{
+		System.out.println("\n	Sakatu espazio barra jarraitzeko:");
+		String entrada  ="Hola";
+		 do
+		 {
+			 entrada  = sc.nextLine();
+		 }
+		 while(!entrada.equals(" ")); 
+	}
+	private void konprobatuEaZenbakiEgokiaDen (int irakurritakoZenb, int kont) throws ZenbakiaEzDaEgokiaSalbuespena
+	{
+		if (irakurritakoZenb > kont)
+		{
+			throw new ZenbakiaEzDaEgokiaSalbuespena();
+		}
+	}
 	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak) throws InputMismatchException
 	{
 		boolean salataria = false;
@@ -100,21 +81,20 @@ public class Teklatua
 				{
 					Iterator <Karta> itr = pAukerak.getIteradorea();
 					int kont = 0;
+					System.out.println("	"+0+") Pasatu");
 					while (itr.hasNext())
 					{
 						kont ++;
 						egungoKarta = itr.next();
 						System.out.print("	"+kont+") "); egungoKarta.imprimatu();
 					}
-					//7. aukera pasatu egiteko da
-					System.out.println("	"+(kont+1)+") Pasatu");
 					System.out.print("	");int aukeratutakoZenb = sc.nextInt();
-					sc.next();
+					this.konprobatuEaZenbakiEgokiaDen(aukeratutakoZenb, kont);
 						//loop-tik ateratzeko
 					salataria = true;
 					//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
 						//baldin pasa duen
-					if (kont+1 == aukeratutakoZenb)
+					if (0 == aukeratutakoZenb)
 					{
 						egungoKarta = null;
 					}
@@ -134,60 +114,83 @@ public class Teklatua
 			catch (InputMismatchException e) 
 			{
 				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu");
+				sc.next();
+			}
+			catch (ZenbakiaEzDaEgokiaSalbuespena e)
+			{
+				System.out.println("	Ez duzu zenbaki egoki bat sartu, berriro saiatu");
 			}
 		}
 		return egungoKarta;
 	}
 	public Karta irakurriEtsaiarenKarta (String mezua)
 	{
-		Karta aukeratutakoKarta ;
-		int kont = 0;
-		Jokalaria jokEtsaia = Partida.getNirePartida().getJokalariEtsaia();
-		if (jokEtsaia.getNireZelaikoKartak() != null || jokEtsaia.getNireZelaikoKartak().getLuzeera() != 0)
+		boolean salataria = false;
+		Karta aukeratutakoKarta = null;
+		while (!salataria);
 		{
-			System.out.println(mezua);
-			//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
-			if (jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
-			{	//Hemen sartzen bada badakigu kartaren batek diana duela
-				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getIteradorea();
-				while (itr.hasNext())
+			try
+			{
+
+				int kont = 0;
+				Jokalaria jokEtsaia = Partida.getNirePartida().getJokalariEtsaia();
+				if (jokEtsaia.getNireZelaikoKartak() != null || jokEtsaia.getNireZelaikoKartak().getLuzeera() != 0)
 				{
-					aukeratutakoKarta = itr.next();
-					kont ++;
-					System.out.print("	"+kont+") ");aukeratutakoKarta.imprimatu();
-				}
-				System.out.print("	");int zenb = sc.nextInt();
-				//Orain badakigu zein den gure aukera
-				aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLisa().getPosizioHonetakoKarta(zenb);
-			}
-			else  
-			{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
-				System.out.print("	0) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
-				Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();
-				while (itr.hasNext())
-				{
-					kont ++;
-					aukeratutakoKarta = itr.next();
-					System.out.print("	"+kont+") ");aukeratutakoKarta.imprimatu();
-				}
-				System.out.print("	");int zenb = sc.nextInt();
-				//Orain dagoeneko badakigu zein aukeratu duen
-				if (zenb == 0)
-				{
-					aukeratutakoKarta = null;
+					System.out.println(mezua);
+					//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
+					if (jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLista() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
+					{	//Hemen sartzen bada badakigu kartaren batek diana duela
+						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getIteradorea();
+						while (itr.hasNext())
+						{
+							aukeratutakoKarta = itr.next();
+							kont ++;
+							System.out.print("	"+kont+") ");aukeratutakoKarta.imprimatu();
+						}
+						System.out.print("	");int zenb = sc.nextInt();
+						this.konprobatuEaZenbakiEgokiaDen(zenb, Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getLuzeera());
+						//Orain badakigu zein den gure aukera
+						aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getPosizioHonetakoKarta(zenb);
+					}
+					else  
+					{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
+						System.out.print("	0) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
+						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();
+						while (itr.hasNext())
+						{
+							kont ++;
+							aukeratutakoKarta = itr.next();
+							System.out.print("	"+kont+") ");aukeratutakoKarta.imprimatu();
+						}
+						System.out.print("	");int zenb = sc.nextInt();
+						//Orain dagoeneko badakigu zein aukeratu duen
+						if (zenb == 0)
+						{
+							aukeratutakoKarta = null;
+						}
+						else
+						{
+							aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getPosizioHonetakoKarta(zenb);
+						}
+					}
 				}
 				else
 				{
-					aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getPosizioHonetakoKarta(zenb);
+					System.out.println("Ez dago Kartarik zelaian, soilik heroiari eraso diezaiokezu");
+					aukeratutakoKarta = null;
 				}
 			}
-			return aukeratutakoKarta;
-		}
-		else
-		{
-			System.out.println("Ez dago Kartarik zelaian, soilik heroiari eraso diezaiokezu");
-			return null;
-		}
+			catch (InputMismatchException e) 
+			{
+				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu");
+				sc.next();
+			}
+			catch (ZenbakiaEzDaEgokiaSalbuespena e)
+			{
+				System.out.println("	Ez duzu zenbaki egoki bat sartu, berriro saiatu");
+			}
+		}	
+		return aukeratutakoKarta;
 	}
 	public void imprimatuX_ (int luzeera)
 	{
@@ -198,10 +201,30 @@ public class Teklatua
 	}
 	public int baiAlaEzAukera (String pMezua)
 	{
-		System.out.println(pMezua);
-		System.out.print("	");System.out.println("1) Bai");
-		System.out.print("	");System.out.println("0) Ez");
-		System.out.print("	");int emaitza = sc.nextInt();
+		boolean salataria = false;
+		int emaitza = 0;
+		while (!salataria)
+		{
+			try
+			{
+				System.out.println(pMezua);
+				System.out.print("	");System.out.println("1) Bai");
+				System.out.print("	");System.out.println("0) Ez");
+				System.out.print("	");
+				emaitza = sc.nextInt();
+				this.konprobatuEaZenbakiEgokiaDen(emaitza, 1);
+				salataria = true;
+			}
+			catch (InputMismatchException e)
+			{
+				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu:");
+				sc.next();
+			}
+			catch (ZenbakiaEzDaEgokiaSalbuespena e)
+			{
+				System.out.println("	"+e.getMessage());
+			}
+		}
 		return emaitza;
 	}
 }

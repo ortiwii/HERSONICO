@@ -3,9 +3,6 @@ package kartak;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
-import java.util.Random;
-
-import a.projectPackage.Partida;
 
 public class ListaKartak 
 {
@@ -165,7 +162,7 @@ public class ListaKartak
 		}
 		return aukeratutakoKarta;
 	}
-	public ListaKartak getDianaDutenKartenLisa ()
+	public ListaKartak getDianaDutenKartenLista ()
 	{
 		ListaKartak emaitza = new ListaKartak ();
 		Iterator <Karta> itr = this.getIteradorea();
