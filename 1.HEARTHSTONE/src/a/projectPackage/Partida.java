@@ -163,7 +163,10 @@ public class Partida
 			
 			String irabazlea = this.jokatu();
 			
-			System.out.println("Partida dagoeneko amaitu da, eta irabazlea:");
+			System.out.println("\n"
+							 + "	############################################################");
+			System.out.println("    		 "+irabazlea+" da IRABAZLEA!!");
+			System.out.println("    ############################################################");
 			System.out.println(irabazlea);
 	}
 	public String jokatu() 
@@ -205,19 +208,22 @@ public class Partida
 	
 	public void inprimatuPartida() 
 	{
-		System.out.println("    BERAZ, HONELA DOA PARTIDA:");
-		for (int i = 0; i <= 1; i++)
+		if (this.irabazia() == null)
 		{
-			System.out.println("");
-			String Mezua = " "+this.listaJokalariak[i].getIzena()+"-ren ZELAIA ";
-			System.out.print("	 ");Teklatua.getNireTeklatua().imprimatuX_(Mezua.length());System.out.println("");
-			System.out.print("	|");System.out.print(Mezua);System.out.println("| Heroiak "+this.listaJokalariak[i].getHeroia().getBizitza()+" Bizitza");
-			System.out.println("");
-			this.listaJokalariak[i].getNireZelaikoKartak().inprimatuLista();
+			System.out.println("    BERAZ, HONELA DOA PARTIDA:");
+			for (int i = 0; i <= 1; i++)
+			{
+				System.out.println("");
+				String Mezua = " "+this.listaJokalariak[i].getIzena()+"-ren ZELAIA ";
+				System.out.print("	 ");Teklatua.getNireTeklatua().imprimatuX_(Mezua.length());System.out.println("");
+				System.out.print("	|");System.out.print(Mezua);System.out.println("| Heroiak "+this.listaJokalariak[i].getHeroia().getBizitza()+" Bizitza");
+				System.out.println("");
+				this.listaJokalariak[i].getNireZelaikoKartak().inprimatuLista();
+			}
+			
+			System.out.println("\n    ------------------------------------------------------------------------------------------");
+			System.out.println("    ------------------------------------------------------------------------------------------");
 		}
-		
-		System.out.println("\n    ------------------------------------------------------------------------------------------");
-		System.out.println("    ------------------------------------------------------------------------------------------");
 
 	}
 	public void kartenEgoeraEguneratu ()

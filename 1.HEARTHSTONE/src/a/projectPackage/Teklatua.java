@@ -85,8 +85,7 @@ public class Teklatua
 					}
 					System.out.print("	");int aukeratutakoZenb = sc.nextInt();
 					this.konprobatuEaZenbakiEgokiaDen(aukeratutakoZenb, kont);
-						//loop-tik ateratzeko
-					salataria = true;
+
 					//dagoeneko aukera zein den badakigunez, prozesua errepikatuko dugu
 						//baldin pasa duen
 					if (aukeratutakoZenb == 0)
@@ -98,6 +97,8 @@ public class Teklatua
 					{
 						egungoKarta = pAukerak.getPosizioHonetakoKarta(aukeratutakoZenb);
 					}
+						//loop-tik ateratzeko
+					salataria = true;
 				}
 				else
 				{
@@ -110,6 +111,7 @@ public class Teklatua
 			catch (InputMismatchException e) 
 			{
 				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu");
+				sc.next();
 			}
 			catch (ZenbakiaEzDaEgokiaSalbuespena e)
 			{
@@ -122,7 +124,7 @@ public class Teklatua
 	{
 		boolean salataria = false;
 		Karta aukeratutakoKarta = null;
-		while (!salataria);
+		while (!salataria)
 		{
 			try
 			{
@@ -179,10 +181,12 @@ public class Teklatua
 			catch (InputMismatchException e) 
 			{
 				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu");
+				sc.next();
 			}
 			catch (ZenbakiaEzDaEgokiaSalbuespena e)
 			{
 				System.out.println("	Ez duzu zenbaki egoki bat sartu, berriro saiatu");
+				sc.next();
 			}
 		}	
 		return aukeratutakoKarta;
@@ -213,6 +217,7 @@ public class Teklatua
 			catch (InputMismatchException e)
 			{
 				System.out.println("	Ez duzu zenbaki oso bat sartu, berriro saiatu:");
+				sc.next();
 			}
 			catch (ZenbakiaEzDaEgokiaSalbuespena e)
 			{
