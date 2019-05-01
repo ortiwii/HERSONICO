@@ -42,15 +42,15 @@ public class Jokalaria
 	private void gemenEguneraketa ()
 	{
 		if (Partida.getNirePartida().getUnekoTxanda()/2 < 9)
-
-		
-		if(this.gemak<10)
 		{
-			this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
-		}
-		else
-		{
-			this.gemak = 10;
+			if(this.gemak<10)
+			{
+				this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
+			}
+			else
+			{
+				this.gemak = 10;
+			}
 		}
 	}
 	public void kartenEgoeraEguneratu ()
