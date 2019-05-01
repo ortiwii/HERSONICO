@@ -104,6 +104,9 @@ public class Jokalaria
 			else
 			{
 				System.out.println("	"+aukeratutakoKarta.getIzena()+" aukeratuta, eta zelaian jarrita");
+				/* Aqui falta que cuando sacas una carta, esas gemas que has utilizado se gasten. Voy a hacer una prueba
+				 para ver si falla siempre o solo me ha fallado ami una vez*/
+				this.gemak = this.gemak - ((-1)*aukeratutakoKarta.getBalioa()); 
 				aukeratutakoKarta.setZelairaAteratakoTxanda();
 				this.zelaianJarri(aukeratutakoKarta);
 				this.konprobatuEaKartarikHildaDagoen();
