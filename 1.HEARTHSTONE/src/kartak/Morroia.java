@@ -11,6 +11,7 @@ public class Morroia extends Karta
 	private Trebetasuna trebetasuna;
 		//por si tiene la habilidad diana
 	private boolean niriSoilikErasoAhal;
+	private boolean trebetasunaErabilita = false;
 	
 	//eraikitzailea
 	public Morroia(int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna) 
@@ -164,9 +165,19 @@ public class Morroia extends Karta
 	{
 		return this.niriSoilikErasoAhal;
 	}
+	
+	public boolean getTrebetasunaErabilita()
+	{
+		return this.trebetasunaErabilita;
+	}
 	//setters
 	public void setErasoa (int pErasoa)
 	{
 		this.erasoa = pErasoa;
+	}
+	
+	public void setTrebetasunaErabilita()
+	{
+		this.trebetasunaErabilita = true;
 	}
 }
