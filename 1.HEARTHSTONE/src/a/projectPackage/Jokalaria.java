@@ -43,14 +43,11 @@ public class Jokalaria
 	{
 		if (Partida.getNirePartida().getUnekoTxanda()/2 < 9)
 		{
-			if(this.gemak<10)
-			{
-				this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
-			}
-			else
-			{
-				this.gemak = 10;
-			}
+			this.gemak = Partida.getNirePartida().getUnekoTxanda()/2+1;
+		}
+		else
+		{
+			this.gemak = 10;
 		}
 	}
 	public void kartenEgoeraEguneratu ()

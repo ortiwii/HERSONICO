@@ -32,7 +32,7 @@ public class SorginkeriaErasokoa extends Sorginkeria
 				}
 				else
 				{
-					System.out.print("	");etsaiarenKarta.imprimatu();
+					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+etsaiarenKarta.getIzena()+" "+((Morroia)etsaiarenKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
 		}

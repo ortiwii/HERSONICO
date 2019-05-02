@@ -25,6 +25,10 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 			this.emanDefentsa(nireKarta);
 			
 			Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa); 
+			if (((Morroia)nireKarta).getBizitza() > 0)
+			{
+				System.out.println("		- "+Partida.getNirePartida().getUnekoJokalaria().getIzena()+"-ren "+nireKarta.getIzena()+" "+((Morroia)nireKarta).getBizitza()+" bizitza puntu ditu");
+			}
 		}
 	}
 	public void emanDefentsa (Karta pKarta)
@@ -32,7 +36,6 @@ public class SorginkeriaDefentsazkoaEskudoa extends SorginkeriaDefentsazkoa
 		if (pKarta != null)
 		{		
 			((Morroia)pKarta).kartaHoniErasotu(eskudoKop*(-1));
-			System.out.print("	");pKarta.imprimatu();
 		}
 		else
 		{
