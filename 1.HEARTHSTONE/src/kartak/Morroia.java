@@ -67,8 +67,22 @@ public class Morroia extends Karta
 			}
 			else
 			{	//	=null bada esan nahi du Heroiari eraso egin nahi diola
-				Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(this.erasoa);
-				System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" puntu ditu orain");
+				if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista() != null)
+				{
+					System.out.println("		- Ez diozu inori erasotuko");
+				}
+				else
+				{
+					Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(this.erasoa);
+					if (Partida.getNirePartida().getHeroiEtsaia().getBizitza() <= 0)
+					{
+						System.out.println("		- HEROIA-ri erasotu diozu, eta HIL EGIN DA !!");
+					}
+					else
+					{
+						System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" puntu ditu orain");
+					}
+				}
 			}
 		}
 		else
@@ -138,6 +152,11 @@ public class Morroia extends Karta
 			super.setErasoDezakeen(false);
 		}
 		
+	}
+	public Karta kopiaBatEgin ()
+	{
+		Morroia emaitza = new Morroia (this.getId(),this.getIzena(),this.getDeskribapena(),this.balioa, this.erasoa, this.bizitza, this.trebetasuna);
+		return emaitza;
 	}
 	//trebetasunak
 	public void egikarituTrebetasuna ()

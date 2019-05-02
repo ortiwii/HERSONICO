@@ -137,6 +137,7 @@ public class Teklatua
 					if (jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLista() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
 					{	//Hemen sartzen bada badakigu kartaren batek diana duela
 						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getIteradorea();
+						System.out.println("	0) Pasatu");
 						while (itr.hasNext())
 						{
 							aukeratutakoKarta = itr.next();
@@ -147,6 +148,10 @@ public class Teklatua
 						this.konprobatuEaZenbakiEgokiaDen(zenb, kont);
 						//Orain badakigu zein den gure aukera
 						aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getPosizioHonetakoKarta(zenb);
+						if (zenb == 0)
+						{
+							aukeratutakoKarta = null;
+						}
 					}
 					else  
 					{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike

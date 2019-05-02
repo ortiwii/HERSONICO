@@ -35,16 +35,36 @@ public class SorginkeriaErasokoa extends Sorginkeria
 					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+etsaiarenKarta.getIzena()+" "+((Morroia)etsaiarenKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
+			Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 		}
 		else
 		{
-			Partida.getNirePartida().getHeroiEtsaia().puntoBatKendu();
-			System.out.print("	 --> "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
+			if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista() != null)
+			{
+				System.out.println("		- Ez diozu inori erasotuko");
+			}
+			else
+			{
+				Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(mina);
+				if (Partida.getNirePartida().getHeroiEtsaia().getBizitza() <= 0)
+				{
+					System.out.println("		- HEROIA-ri erasotu diozu, eta HIL EGIN DA !!");
+				}
+				else
+				{
+					System.out.print("	 --> "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
+				}
+				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
+			}
 		}
-		Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 	}
 	public void imprimatu ()
 	{
 		System.out.println("Sorginkeria: "+super.getIzena()+", "+this.mina+" bizitza punto kentzen dizkio karta etsai bati ("+this.balioa+" gema)");
+	}
+	public Karta kopiaBatEgin ()
+	{
+		SorginkeriaErasokoa emaitza = new SorginkeriaErasokoa (this.getId(), this.izena, this.getDeskribapena(), this.balioa, this.mina);
+		return emaitza;
 	}
 }

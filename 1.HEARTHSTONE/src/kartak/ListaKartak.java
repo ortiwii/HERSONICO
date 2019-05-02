@@ -190,9 +190,20 @@ public class ListaKartak
 	}
 	public ArrayList<Karta> get40Karta ()
 	{
-		ArrayList<Karta> listaKartak = (ArrayList<Karta>) lista.clone();
-		Collections.shuffle(listaKartak);	
-		return listaKartak;
+		ArrayList<Karta> emaitza = new ArrayList<Karta>();
+		Iterator <Karta> itr = this.getIteradorea();
+		Karta egungoKarta;
+		while (itr.hasNext())
+		{
+			egungoKarta = itr.next();
+			emaitza.add(egungoKarta.kopiaBatEgin());
+		}
+		Collections.shuffle(emaitza);
+		return emaitza;
+		
+//		ArrayList<Karta> listaKartak = (ArrayList<Karta>) lista.clone();
+//		Collections.shuffle(listaKartak);	
+//		return listaKartak;
 	}
 	public void trebetasunakEgikaritu ()
 	{

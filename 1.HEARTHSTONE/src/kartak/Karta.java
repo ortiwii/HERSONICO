@@ -66,6 +66,7 @@ public abstract class Karta
 		this.erasoAhalDu = pBool;
 	}
 	public abstract void egoeraEguneratu();
+	public abstract Karta kopiaBatEgin ();
 		//getters
 		public int getBalioa ()
 		{
@@ -78,6 +79,10 @@ public abstract class Karta
 		public boolean getErasoDezakeen ()
 		{
 			return this.erasoAhalDu;
+		}
+		public int getId ()
+		{
+			return this.idKarta;
 		}
 		public String getIzena ()
 		{

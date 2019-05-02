@@ -162,8 +162,12 @@ public class Jokalaria
 			{
 				if (this.zelaikoKartak.getLuzeera() != 0)
 				{
-					this.eskukoKartak.kenduKarta(pKarta);
+					int gemak = this.gemak;
 					pKarta.jokatuKarta();
+					if (this.gemak != gemak)
+					{
+						this.eskukoKartak.kenduKarta(pKarta);
+					}
 				}
 				else 
 				{
@@ -173,9 +177,18 @@ public class Jokalaria
 			}
 			else
 			{
-				this.eskukoKartak.kenduKarta(pKarta);
+				int gemak = this.gemak;
 				pKarta.jokatuKarta();
+				if (this.gemak != gemak)
+				{
+					this.eskukoKartak.kenduKarta(pKarta);
+				}
 			}
+		}
+		else
+		{
+			pKarta.jokatuKarta();
+			this.eskukoKartak.kenduKarta(pKarta);
 		}
 	}
 	private boolean aukeratuAhalDu()
