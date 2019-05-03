@@ -162,9 +162,8 @@ public class Partida
 			this.listaJokalariak[1] = jok2;
 			
 			String irabazlea = this.jokatu();
-			
-			System.out.println("\n"
-							 + "	############################################################");
+			System.out.println(" ");
+			System.out.println("	############################################################");
 			System.out.println("    		 "+irabazlea+" da IRABAZLEA!!");
 			System.out.println("    ############################################################");
 			System.out.println(irabazlea);

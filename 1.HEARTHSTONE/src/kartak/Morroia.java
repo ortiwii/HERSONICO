@@ -70,6 +70,9 @@ public class Morroia extends Karta
 				if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista() != null)
 				{
 					System.out.println("		- Ez diozu inori erasotuko");
+
+					//Egoeraren eguneraketa
+					super.setErasoDezakeen(true);
 				}
 				else
 				{
@@ -82,6 +85,9 @@ public class Morroia extends Karta
 					{
 						System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" puntu ditu orain");
 					}
+					
+					//Egoeraren eguneraketa
+					super.setErasoDezakeen(false);
 				}
 			}
 		}
@@ -89,8 +95,6 @@ public class Morroia extends Karta
 		{
 			System.out.println("Aukeratu Duzun kartak ezin dezakee erasorik egin");
 		}
-		//behin karta erabilita, ezin dezake berriz ere eraso egin
-		super.setErasoDezakeen(false);
 	}
 	public void imprimatu ()
 	{

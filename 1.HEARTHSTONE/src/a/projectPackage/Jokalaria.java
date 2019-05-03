@@ -132,7 +132,7 @@ public class Jokalaria
 			else
 			{
 				erasotzekoKarta.jokatuKarta();
-				erasotzekoKarta.setErasoDezakeen(false);
+//				erasotzekoKarta.setErasoDezakeen(false);
 				//konprobatu ea kartaren bat hilda dagoen
 				this.konprobatuEaKartarikHildaDagoen();
 			}
