@@ -1,7 +1,6 @@
 package kartak;
 
-import a.projectPackage.Partida;
-import a.projectPackage.Teklatua;
+import a.projectPackage.*;
 
 public class SorginkeriaErasokoa extends Sorginkeria 
 {

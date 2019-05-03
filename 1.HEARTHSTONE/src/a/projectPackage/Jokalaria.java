@@ -132,7 +132,6 @@ public class Jokalaria
 			else
 			{
 				erasotzekoKarta.jokatuKarta();
-//				erasotzekoKarta.setErasoDezakeen(false);
 				//konprobatu ea kartaren bat hilda dagoen
 				this.konprobatuEaKartarikHildaDagoen();
 			}
@@ -217,26 +216,6 @@ public class Jokalaria
 		}
 		return emaitza;
 	}
-//	private boolean erasoDezake()
-//	{
-//		boolean emaitza = true;
-//		//baldin partida irabazia ez dagoen
-//		if (Partida.getNirePartida().irabazia() != null)
-//		{
-//			emaitza = false;
-//		}
-//		//baldin kartak gelditzen zaizkion zelaian
-//		if (this.zelaikoKartak.getLuzeera() == 0)
-//		{
-//			emaitza = false;
-//		}
-//		//Baldin erasorik egin ezin duten
-//		if (!this.zelaikoKartak.erasoDezakete())
-//		{
-//			emaitza = false;
-//		}
-//		return emaitza;
-//	}
 	public boolean irabazia ()
 	{
 		boolean emaitza = false;

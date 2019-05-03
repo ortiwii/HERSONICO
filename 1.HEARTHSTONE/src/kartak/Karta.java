@@ -9,14 +9,9 @@ public abstract class Karta
 	protected String izena;
 	private String deskribapena;
 	protected int balioa;
-	//textoaren kolorerako konstanteak
-//	private static final String ANSI_RED = "\u001B[31m";
-//	private static final String ANSI_BLUE = "\u001B[34m";
-//	private static final String ANSI_RESET = "\u001B[0m";
-	//jokatu karta kudeatzeko
 	private int zelairaAteratakoTxanda;
-	//Creo que esto hace falta, porque no puedes sacar una carta y que ataque del tiron, 
-	//tienes que esperar un turno
+	
+	//txandaren kudeaketa
 	private boolean erasoAhalDu;
 
 	//eraikitzailea
@@ -32,7 +27,9 @@ public abstract class Karta
 	
 	//gainontzeko metodoak	
 	public abstract void jokatuKarta();
-	
+	public abstract void imprimatu();
+	public abstract void egoeraEguneratu();
+	public abstract Karta kopiaBatEgin ();
 	public boolean idHauDu(int pId)
 	{
 		boolean emaitza = false;
@@ -42,7 +39,6 @@ public abstract class Karta
 		}
 		return emaitza;
 	}
-	public abstract void imprimatu();
 	public void setZelairaAteratakoTxanda ()
 	{
 		this.zelairaAteratakoTxanda = Partida.getNirePartida().getUnekoTxanda();
@@ -65,8 +61,6 @@ public abstract class Karta
 	{
 		this.erasoAhalDu = pBool;
 	}
-	public abstract void egoeraEguneratu();
-	public abstract Karta kopiaBatEgin ();
 		//getters
 		public int getBalioa ()
 		{

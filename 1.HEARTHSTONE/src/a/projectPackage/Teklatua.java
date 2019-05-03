@@ -19,7 +19,6 @@ public class Teklatua
 	{	
 		sc = new Scanner(System.in);
 	}
-	
 	public static Teklatua getNireTeklatua()
 	{
 		if (nireTeklatua == null)
@@ -49,7 +48,7 @@ public class Teklatua
         System.out.println("\n	-- Sakatu // ENTER // jarraitzeko --");
         try 
         {
-            int read = System.in.read(new byte[2]);
+            System.in.read(new byte[2]);
         } 
         catch (IOException e) 
         {

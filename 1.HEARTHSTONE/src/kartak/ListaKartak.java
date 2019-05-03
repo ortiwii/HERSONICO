@@ -200,10 +200,6 @@ public class ListaKartak
 		}
 		Collections.shuffle(emaitza);
 		return emaitza;
-		
-//		ArrayList<Karta> listaKartak = (ArrayList<Karta>) lista.clone();
-//		Collections.shuffle(listaKartak);	
-//		return listaKartak;
 	}
 	public void trebetasunakEgikaritu ()
 	{

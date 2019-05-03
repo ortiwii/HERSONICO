@@ -130,8 +130,7 @@ public class Morroia extends Karta
 	{
 		this.trebetasuna.erabiliTrebetasuna(this);
 	}
-	
-			//Siempre hay que comprobar esto para que pueda atacar
+	//Siempre hay que comprobar esto para que pueda atacar
 	private boolean erasoAhal()
 	{
 		if (this.trebetasuna instanceof TrebetasunaErasoJarraia)
@@ -171,35 +170,33 @@ public class Morroia extends Karta
 		}
 	}
 		//diana
-	public void setDiana ()
+		public void setDiana ()
 	{
 		this.niriSoilikErasoAhal = true;
 	}
-	//getters
-	public int getErasoa ()
-	{
-		return this.erasoa;
-	}
-	public int getBizitza ()
-	{
-		return this.bizitza;
-	}
-	public boolean getNiriSoilikErasoAhal ()
-	{
-		return this.niriSoilikErasoAhal;
-	}
-	
-	public boolean getTrebetasunaErabilita()
+		//getters
+		public int getErasoa ()
+		{
+			return this.erasoa;
+		}
+		public int getBizitza ()
+		{
+			return this.bizitza;
+		}
+		public boolean getNiriSoilikErasoAhal ()
+		{
+			return this.niriSoilikErasoAhal;
+		}	
+		public boolean getTrebetasunaErabilita()
 	{
 		return this.trebetasunaErabilita;
 	}
-	//setters
-	public void setErasoa (int pErasoa)
-	{
-		this.erasoa = pErasoa;
-	}
-	
-	public void setTrebetasunaErabilita()
+		//setters
+		public void setErasoa (int pErasoa)
+		{
+			this.erasoa = pErasoa;
+		}	
+		public void setTrebetasunaErabilita()
 	{
 		this.trebetasunaErabilita = true;
 	}

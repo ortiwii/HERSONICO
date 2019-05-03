@@ -166,7 +166,6 @@ public class Partida
 			System.out.println("	############################################################");
 			System.out.println("    		 "+irabazlea+" da IRABAZLEA!!");
 			System.out.println("    ############################################################");
-			System.out.println(irabazlea);
 	}
 	public String jokatu() 
 	{
@@ -176,8 +175,7 @@ public class Partida
 			egungoJokalaria.jokatuTxanda();
 			this.inprimatuPartida();
 			
-			this.hurrengoTxanda();
-			
+			this.hurrengoTxanda();		
 		}
 		
 		return this.irabazia().getIzena();
@@ -203,8 +201,7 @@ public class Partida
 		{
 			return null;
 		}
-	}
-	
+	}	
 	public void inprimatuPartida() 
 	{
 		if (this.irabazia() == null)
@@ -278,5 +275,11 @@ public class Partida
 	public int getUnekoTxanda ()
 	{
 		return Partida.unekoTxanda;
+	}
+
+	//JOKOA HASIERATZEKO BEHARREZKOA DEN MAIN
+	public static void main(String[] args) 
+	{
+		Partida.getNirePartida().hasieratuPartida();
 	}
 }
