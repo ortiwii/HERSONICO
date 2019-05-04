@@ -142,9 +142,19 @@ public class Partida
 	public void hasieratuPartida ()
 	{
 		this.kartaGuztiakKargatu();
-		System.out.println("\n\n       			*******************************************************************************************************************");
-		System.out.println("       			*                                                   HEARTHSTONE                                                   *");
-		System.out.println("       			*******************************************************************************************************************");	
+		System.out.println("\n\n       			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+		System.out.println("       			░                                                                                                                       ░");
+		System.out.println("       			░       ░      ░  ░░░░░░   ░░░░░░░  ░░░░░░░  ░░░░░░░░░  ░    ░   ░░░░░░░  ░░░░░░░░░  ░░░░░░░  ░░░       ░  ░░░░░░       ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░     ░      ░      ░    ░   ░            ░      ░     ░  ░ ░░      ░  ░            ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░     ░      ░      ░    ░   ░            ░      ░     ░  ░  ░░     ░  ░            ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░     ░      ░      ░    ░   ░            ░      ░     ░  ░   ░░    ░  ░            ░");
+		System.out.println("       			░       ░░░░░░░░  ░░░░     ░░░░░░░  ░░░░░░░      ░      ░░░░░░   ░░░░░░░      ░      ░     ░  ░    ░░   ░  ░░░░         ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░░           ░      ░    ░         ░      ░      ░     ░  ░     ░░  ░  ░            ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░  ░         ░      ░    ░         ░      ░      ░     ░  ░      ░░ ░  ░            ░");
+		System.out.println("       			░       ░      ░  ░        ░     ░  ░    ░       ░      ░    ░         ░      ░      ░     ░  ░       ░░░  ░            ░");
+		System.out.println("       			░       ░      ░  ░░░░░░   ░     ░  ░      ░     ░      ░    ░   ░░░░░░░      ░      ░░░░░░░  ░        ░░  ░░░░░░       ░");
+		System.out.println("       			░                                                                                                                       ░");
+		System.out.println("       			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");	
 		System.out.println("");
 		//Deskripzioa nahi duen galdetu
 		this.deskripzioaNahiDuenGaldetu();
@@ -163,9 +173,9 @@ public class Partida
 			
 			String irabazlea = this.jokatu();
 			System.out.println(" ");
-			System.out.println("	############################################################");
-			System.out.println("    		 "+irabazlea+" da IRABAZLEA!!");
-			System.out.println("    ############################################################");
+			System.out.println("	░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
+			System.out.println("    ░	 "+irabazlea+" da IRABAZLEA!!                          ░");
+			System.out.println("    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 	}
 	public String jokatu() 
 	{
