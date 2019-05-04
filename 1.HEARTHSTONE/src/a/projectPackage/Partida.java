@@ -174,7 +174,7 @@ public class Partida
 			String irabazlea = this.jokatu();
 			System.out.println(" ");
 			System.out.println("	░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
-			System.out.println("    ░	 "+irabazlea+" da IRABAZLEA!!                          ░");
+			System.out.println("    ░	 "+irabazlea+" da IRABAZLEA!!☺☺                        ░");
 			System.out.println("    ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
 	}
 	public String jokatu() 

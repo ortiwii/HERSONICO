@@ -79,7 +79,7 @@ public class Morroia extends Karta
 					Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(this.erasoa);
 					if (Partida.getNirePartida().getHeroiEtsaia().getBizitza() <= 0)
 					{
-						System.out.println("		- HEROIA-ri erasotu diozu, eta HIL EGIN DA !!");
+						System.out.println("		- HEROIA-ri erasotu diozu, eta ☠ HIL EGIN DA ☠!!");
 					}
 					else
 					{
