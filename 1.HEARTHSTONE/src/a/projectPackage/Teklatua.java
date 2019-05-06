@@ -57,7 +57,7 @@ public class Teklatua
 	}
 	private void konprobatuEaZenbakiEgokiaDen (int irakurritakoZenb, int kont) throws ZenbakiaEzDaEgokiaSalbuespena
 	{
-		if ((irakurritakoZenb > kont)||(irakurritakoZenb < 0))
+		if ((irakurritakoZenb > kont)||(irakurritakoZenb < 0)) // Faltana si metes un numero negativo que salte exception.
 		{
 			throw new ZenbakiaEzDaEgokiaSalbuespena();
 		}
