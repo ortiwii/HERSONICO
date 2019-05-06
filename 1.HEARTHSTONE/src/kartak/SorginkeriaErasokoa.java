@@ -51,11 +51,12 @@ public class SorginkeriaErasokoa extends Sorginkeria
 				}
 				else
 				{
-					System.out.print("	 --> "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
+					System.out.print("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
 				}
 				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 			}
 		}
+		System.out.println("");
 	}
 	public void imprimatu ()
 	{
