@@ -1,5 +1,7 @@
 package a.projectPackage;
 
+import java.io.IOException;
+
 import kartak.*;
 import trebetasunak.*;
 
@@ -228,6 +230,15 @@ public class Partida
 			
 			System.out.println("\n    ------------------------------------------------------------------------------------------");
 			System.out.println("    ------------------------------------------------------------------------------------------");
+//			try {
+//				kontsolaGarbitu();
+//			} catch (IOException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+			}
 		}
 
 	}
@@ -291,4 +302,8 @@ public class Partida
 	{
 		Partida.getNirePartida().hasieratuPartida();
 	}
+	
+//	public void kontsolaGarbitu() throws IOException, InterruptedException {
+//		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+//	}
 }
