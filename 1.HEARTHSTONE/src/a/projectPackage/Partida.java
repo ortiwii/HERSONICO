@@ -1,7 +1,5 @@
 package a.projectPackage;
 
-import java.io.IOException;
-
 import kartak.*;
 import trebetasunak.*;
 
