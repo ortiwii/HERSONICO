@@ -6,19 +6,42 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class PartidaProbak {
+//import kartak.Heroia;
 
+public class PartidaProbak {
+//	Partida partida1, partida2;
+//	Jokalaria jokalari1, jokalari2;
+//	Heroia jokalari1Heroia, jokalari2Heroia;
+	
 	@Before
 	public void setUp() throws Exception {
+//		partida1 = Partida.getNirePartida();
+//		partida1.hasieratuPartida();
+//		jokalari1 = new Jokalaria ("Martin");
+//		jokalari2 = new Jokalaria ("Gorka");
+//		jokalari1Heroia = new Heroia ();
+//		jokalari2Heroia = new Heroia ();
+		fail();
+		
 	}
 
 	@After
 	public void tearDown() throws Exception {
+//		partida1 = null;
+//		jokalari1 = null;
+//		jokalari2 = null;
+//		jokalari1Heroia = null;
+//		jokalari2Heroia = null;
+		fail();
 	}
 
 	@Test
 	public void testGetNirePartida() {
-		fail("Not yet implemented");
+//		assertFalse(partida1==null); // Ondo eman behar du Setup()-ean sortu dugulako partida.
+//		assertTrue(partida2==null); // partida2 ez dugunez sortu, hau null eman beharko luke.
+//		partida2 = Partida.getNirePartida();
+//		assertFalse(partida2==null); // Orain sortu dugula ya ez da null izango.
+		fail();
 	}
 
 	@Test
@@ -38,7 +61,12 @@ public class PartidaProbak {
 
 	@Test
 	public void testIrabazia() {
-		fail("Not yet implemented");
+//		jokalari1Heroia = jokalari1.getHeroia();
+//		jokalari1Heroia.setBizitza(0); // Metodo hau sortu dugu heroiaren bizitza aldatu ahal izateko eta jUnitak errazteko.
+//		assertTrue(jokalari2.irabazia());
+		fail();
+		
+		
 	}
 
 	@Test

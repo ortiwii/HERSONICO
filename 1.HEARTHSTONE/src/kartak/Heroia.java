@@ -18,6 +18,11 @@ public class Heroia
 	{
 		return this.bizitza;
 	}
+	
+	public void setBizitza(int pBizitza) // Metodo hau jUniten implementazioa errazteko baino ez da.
+	{
+		this.bizitza = pBizitza;
+	}
 	public void honiErasoEgin (int pErasoa)
 	{
 		this.bizitza = this.bizitza - pErasoa;
