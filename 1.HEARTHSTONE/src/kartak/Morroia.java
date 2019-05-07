@@ -188,16 +188,20 @@ public class Morroia extends Karta
 			return this.niriSoilikErasoAhal;
 		}	
 		public boolean getTrebetasunaErabilita()
-	{
+		{
 		return this.trebetasunaErabilita;
-	}
+		}
 		//setters
 		public void setErasoa (int pErasoa)
 		{
 			this.erasoa = pErasoa;
 		}	
 		public void setTrebetasunaErabilita()
-	{
+		{
 		this.trebetasunaErabilita = true;
-	}
+		}
+		public void setBizitza (int pBiz)
+		{
+			this.bizitza = pBiz;
+		}
 }

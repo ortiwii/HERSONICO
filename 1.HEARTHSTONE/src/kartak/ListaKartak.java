@@ -155,6 +155,9 @@ public class ListaKartak
 		Iterator <Karta> itr = this.getIteradorea();
 		int kont = 0;
 		Karta aukeratutakoKarta = null;
+			//no se si esto va a hacer algo mal 
+			//TODO
+		aukeratutakoKarta = itr.next();	
 		while (itr.hasNext() && kont < pos)
 		{
 			kont++;

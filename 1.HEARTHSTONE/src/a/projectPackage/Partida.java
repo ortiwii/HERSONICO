@@ -68,7 +68,7 @@ public class Partida
 		}
 		
 	}
-	private void kartaGuztiakKargatu ()
+	public void kartaGuztiakKargatu ()
 	{
 		String textoGuztia = Fitxategiak.getFitxategiak().irakurriTxt("bin\\kartak.txt");
 		Partida.kartaGuztiak = new ListaKartak ();
