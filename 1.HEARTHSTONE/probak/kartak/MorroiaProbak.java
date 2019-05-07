@@ -38,11 +38,6 @@ public class MorroiaProbak {
 	}
 
 	@Test
-	public void testEgoeraEguneratu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testKopiaBatEgin() {
 		
 		Karta morroi1 = mo1.kopiaBatEgin();
@@ -71,7 +66,9 @@ public class MorroiaProbak {
 
 	@Test
 	public void testKartaHoniErasotu() {
-		fail("Not yet implemented");
+		assertEquals(mo1.getBizitza(), 2);
+		mo1.kartaHoniErasotu(1);
+		assertEquals(mo1.getBizitza(), 1);
 	}
 
 	@Test
