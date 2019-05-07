@@ -38,18 +38,26 @@ public class MorroiaProbak {
 	}
 
 	@Test
-	public void testImprimatu() {
-		fail("Not yet implemented");
-	}
-
-	@Test
 	public void testEgoeraEguneratu() {
 		fail("Not yet implemented");
 	}
 
 	@Test
 	public void testKopiaBatEgin() {
-		fail("Not yet implemented");
+		
+		Karta morroi1 = mo1.kopiaBatEgin();
+		// sortzen dugu morroi bat kopia egiteko eta konprobatzen dugu atributuak berdinak direla.
+		// Id berdina dutela konprobatzen dugu
+		assertEquals(morroi1.getId(), mo1.getId());
+		// Izen berdina badute konprobatzen dugu
+		assertEquals(morroi1.getIzena(), mo1.getIzena());
+		//  Deskribapen berbera dutela konprobatzen dugu
+		assertEquals(morroi1.getDeskribapena(), mo1.getDeskribapena());
+		// balio berdina dutela konprobatzen dugu.
+		assertEquals(morroi1.getBalioa(), mo1.getBalioa());
+		// erasoa berdina del konprobatzen dugu.
+		
+		
 	}
 
 	@Test
@@ -59,8 +67,6 @@ public class MorroiaProbak {
 		assertNotNull(mo3);
 		assertNotNull(t1);
 		assertNotNull(t2);
-
-
 	}
 
 	@Test
@@ -70,7 +76,9 @@ public class MorroiaProbak {
 
 	@Test
 	public void testErabiliTrebetasuna() {
-		fail("Not yet implemented");
+		assertFalse(mo3.getNiriSoilikErasoAhal());
+		mo3.setDiana();
+		assertTrue(mo3.getNiriSoilikErasoAhal());
 	}
 
 	@Test
@@ -95,30 +103,62 @@ public class MorroiaProbak {
 
 	@Test
 	public void testGetBizitza() {
-		assertEquals(mo1.getBizitza(),2);
-		assertEquals(mo2.getBizitza(),1);
-		assertEquals(mo3.getBizitza(),4);
-
+		assertEquals(mo1.getBizitza(), 2);
+		assertEquals(mo2.getBizitza(), 1);
+		assertEquals(mo3.getBizitza(), 4);
 	}
 
 	@Test
 	public void testGetNiriSoilikErasoAhal() {
-		fail("Not yet implemented");
+		// Este metodo es para saber si tienes diana o no.
+		//t1 es eraso jarraia y t2 es diana
+		assertFalse(mo3.getNiriSoilikErasoAhal());
+		mo3.setDiana();
+		assertTrue(mo3.getNiriSoilikErasoAhal());
 	}
 
 	@Test
 	public void testGetTrebetasunaErabilita() {
-		fail("Not yet implemented");
+		assertEquals(mo1.getTrebetasunaErabilita(), false);
+		mo1.setTrebetasunaErabilita();
+		assertEquals(mo1.getTrebetasunaErabilita(), true);
+		// mo1 morroiak t1 trebetasuna du, hau da, eraso jarraia du
+		
+		assertEquals(mo3.getTrebetasunaErabilita(), false);
+		mo3.setTrebetasunaErabilita();
+		assertEquals(mo3.getTrebetasunaErabilita(), true);
+		// mo3 morroiak t2 trebetasuna du, hau da, diana du
 	}
 
 	@Test
 	public void testSetErasoa() {
-		fail("Not yet implemented");
+		assertEquals(mo1.getErasoa(), 4);
+		mo1.setErasoa(1);
+		assertEquals(mo1.getErasoa(), 1);
+
+		
+		assertEquals(mo2.getErasoa(), 1);
+		mo2.setErasoa(2);
+		assertEquals(mo2.getErasoa(), 2);
+
+		
+		assertEquals(mo3.getErasoa(), 1);
+		mo3.setErasoa(2);
+		assertEquals(mo3.getErasoa(), 2);
+
 	}
 
 	@Test
 	public void testSetTrebetasunaErabilita() {
-		fail("Not yet implemented");
+		assertEquals(mo1.getTrebetasunaErabilita(), false);
+		mo1.setTrebetasunaErabilita();
+		assertEquals(mo1.getTrebetasunaErabilita(), true);
+		// mo1 morroiak t1 trebetasuna du, hau da, eraso jarraia du
+		
+		assertEquals(mo3.getTrebetasunaErabilita(), false);
+		mo3.setTrebetasunaErabilita();
+		assertEquals(mo3.getTrebetasunaErabilita(), true);
+		// mo3 morroiak t2 trebetasuna du, hau da, diana du
 	}
 
 }
