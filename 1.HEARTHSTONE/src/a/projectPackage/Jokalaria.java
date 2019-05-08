@@ -151,7 +151,7 @@ public class Jokalaria
 		}
 		else
 		{
-			System.out.println("  Ez duzu kartarik lapurtzeko");
+			System.out.println("  !! Ez duzu kartarik lapurtzeko !! \n");
 		}
 	}
 	private void zelaianJarri (Karta pKarta)
