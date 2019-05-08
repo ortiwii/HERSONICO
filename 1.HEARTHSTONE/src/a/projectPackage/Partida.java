@@ -194,7 +194,6 @@ public class Partida
 		Teklatua.getNireTeklatua().itxaronEnterArte();
 		//Suma 1 a uneko txanda
 		Partida.unekoTxanda = Partida.unekoTxanda + 1;
- 
 	}
 	public Jokalaria irabazia()
 	{
