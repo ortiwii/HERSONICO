@@ -1,7 +1,5 @@
 package kartak;
 
-import a.projectPackage.Partida;
-
 public class Heroia  
 {
 	//atributoak
@@ -26,14 +24,6 @@ public class Heroia
 	public void honiErasoEgin (int pErasoa)
 	{
 		this.bizitza = this.bizitza - pErasoa;
-	}
-	public void heroiEtsaiariErasoEgin ()
-	{
-		Partida.getNirePartida().getHeroiEtsaia().puntoBatKendu();
-	}
-	public void puntoBatKendu ()
-	{
-		this.bizitza = this.bizitza - 1 ;
 	}
 	public boolean bizirikDago ()
 	{
