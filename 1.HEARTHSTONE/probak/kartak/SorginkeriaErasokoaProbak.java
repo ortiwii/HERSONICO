@@ -37,12 +37,7 @@ public class SorginkeriaErasokoaProbak {
 		mo2 = null;
 		mo3 = null;
 	}
-
-	@Test
-	public void testJokatuKarta() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testKopiaBatEgin() {
 		SorginkeriaErasokoa sorr1 = (SorginkeriaErasokoa) sor1.kopiaBatEgin();
