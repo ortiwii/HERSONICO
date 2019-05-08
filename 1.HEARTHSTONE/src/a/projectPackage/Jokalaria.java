@@ -144,8 +144,15 @@ public class Jokalaria
 	private void lapurtu () 
 	{
 		Karta kartaLapurtua = this.lapurtzekoKartak.lapurtuKarta();
-		this.lapurtzekoKartak.kenduKarta(kartaLapurtua);
-		this.eskukoKartak.gehituKarta(kartaLapurtua);
+		if (kartaLapurtua != null)
+		{
+			this.lapurtzekoKartak.kenduKarta(kartaLapurtua);
+			this.eskukoKartak.gehituKarta(kartaLapurtua);
+		}
+		else
+		{
+			System.out.println("  Ez duzu kartarik lapurtzeko");
+		}
 	}
 	private void zelaianJarri (Karta pKarta)
 	{

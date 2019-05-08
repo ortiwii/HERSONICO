@@ -22,9 +22,13 @@ public class ListaKartak
 	}
 	public Karta lapurtuKarta ()
 	{
-		Iterator <Karta> itr = this.getIteradorea();
-		Karta kartaLapurtua = itr.next();
-		this.kenduKarta(kartaLapurtua);
+		Karta kartaLapurtua = null;
+		if (this.getLuzeera() != 0)
+		{
+			Iterator <Karta> itr = this.getIteradorea();
+			kartaLapurtua = itr.next();
+			this.kenduKarta(kartaLapurtua);
+		}
 		return kartaLapurtua;
 	}
 	public void kartenEgoeraEguneratu ()
@@ -155,9 +159,6 @@ public class ListaKartak
 		Iterator <Karta> itr = this.getIteradorea();
 		int kont = 0;
 		Karta aukeratutakoKarta = null;
-			//no se si esto va a hacer algo mal 
-			//TODO
-		aukeratutakoKarta = itr.next();	
 		while (itr.hasNext() && kont < pos)
 		{
 			kont++;

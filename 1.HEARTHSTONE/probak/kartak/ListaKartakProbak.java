@@ -66,7 +66,7 @@ public class ListaKartakProbak
 	{
 		l1.setLista(kartaGuztiak.get40Karta());
 		int luzeera = l1.getLuzeera();
-		Karta k1 = l1.getPosizioHonetakoKarta(0);
+		Karta k1 = l1.getPosizioHonetakoKarta(1);
 		Karta kartaLapurtua = l1.lapurtuKarta();
 		
 		assertEquals (k1, kartaLapurtua);
@@ -158,9 +158,9 @@ public class ListaKartakProbak
 		l1.gehituKarta(mo2);
 		l1.gehituKarta(mo1);
 		
-		assertEquals (mo3, l1.getPosizioHonetakoKarta(0));
-		assertEquals (mo2, l1.getPosizioHonetakoKarta(1));
-		assertEquals (mo1, l1.getPosizioHonetakoKarta(2));
+		assertEquals (mo3, l1.getPosizioHonetakoKarta(1));
+		assertEquals (mo2, l1.getPosizioHonetakoKarta(2));
+		assertEquals (mo1, l1.getPosizioHonetakoKarta(3));
 	}
 
 	@Test
