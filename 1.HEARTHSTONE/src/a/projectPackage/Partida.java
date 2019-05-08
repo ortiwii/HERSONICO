@@ -260,7 +260,7 @@ public class Partida
 		// si unekotxanda es bikoti devolvemos el heroe del jugador 2, y si no del 1, es decir,
 		// hacemos lo contrario
 		if (Partida.unekoTxanda % 2 != 0)
-		{
+		{ 
 			return this.listaJokalariak[0].getHeroia();
 		}
 		else
