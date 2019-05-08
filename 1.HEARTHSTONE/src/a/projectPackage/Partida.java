@@ -184,7 +184,7 @@ public class Partida
 			egungoJokalaria.jokatuTxanda();
 			this.inprimatuPartida();
 			
-			this.hurrengoTxanda();		
+			this.hurrengoTxanda();
 		}
 		
 		return this.irabazia().getIzena();
@@ -227,8 +227,7 @@ public class Partida
 			}
 			
 			System.out.println("\n    ------------------------------------------------------------------------------------------");
-			System.out.println("    ------------------------------------------------------------------------------------------");
-		}
+			System.out.println("    ------------------------------------------------------------------------------------------");		}
 }
 	
 	public void kartenEgoeraEguneratu ()
