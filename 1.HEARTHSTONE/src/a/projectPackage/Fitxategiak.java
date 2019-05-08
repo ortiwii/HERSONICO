@@ -36,7 +36,7 @@ public class Fitxategiak
 		}
 		catch (Exception e) 
 		{
-			System.out.println("No se encontro el archivo");
+			System.out.println("Ez da fitxategia aurkitu");
 		}
 		return texto;
 	}
