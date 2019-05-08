@@ -75,6 +75,8 @@ public class MorroiaProbak {
 
 	@Test
 	public void testEgikarituTrebetasuna() {
+
+		// skere
 		assertFalse(mo3.getNiriSoilikErasoAhal());
 		mo3.egikarituTrebetasuna();
 		assertTrue(mo3.getNiriSoilikErasoAhal());
