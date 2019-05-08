@@ -67,4 +67,9 @@ public class SorginkeriaErasokoa extends Sorginkeria
 		SorginkeriaErasokoa emaitza = new SorginkeriaErasokoa (this.getId(), this.izena, this.getDeskribapena(), this.balioa, this.mina);
 		return emaitza;
 	}
+	
+	public int getMina()
+	{
+		return this.mina;
+	}
 }
