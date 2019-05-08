@@ -197,13 +197,13 @@ public class Partida
 	}
 	public Jokalaria irabazia()
 	{
-		if (this.listaJokalariak[0].irabazia()) 		
-		{
-			return listaJokalariak[0];
-		}
-		else if (this.listaJokalariak[1].irabazia())
+		if (this.listaJokalariak[0].galduDuzu()) 		
 		{
 			return listaJokalariak[1];
+		}
+		else if (this.listaJokalariak[1].galduDuzu())
+		{
+			return listaJokalariak[0];
 		}
 		else
 		{

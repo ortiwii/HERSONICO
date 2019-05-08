@@ -223,7 +223,7 @@ public class Jokalaria
 		}
 		return emaitza;
 	}
-	public boolean irabazia ()
+	public boolean galduDuzu ()
 	{
 		boolean emaitza = false;
 		if (this.heroia.getBizitza() <= 0)
