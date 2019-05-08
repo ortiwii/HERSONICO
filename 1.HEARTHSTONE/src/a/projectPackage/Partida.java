@@ -228,15 +228,6 @@ public class Partida
 			
 			System.out.println("\n    ------------------------------------------------------------------------------------------");
 			System.out.println("    ------------------------------------------------------------------------------------------");
-//			try {
-//				kontsolaGarbitu();
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 		}
 }
 	
@@ -295,13 +286,18 @@ public class Partida
 		return Partida.unekoTxanda;
 	}
 
+		//setters
+		public void setJok (Jokalaria jok, int pos)
+		{
+			this.listaJokalariak[pos] = jok;
+		}
+		public void setTxanda (int txanda)
+		{
+			Partida.unekoTxanda = txanda;
+		}
 	//JOKOA HASIERATZEKO BEHARREZKOA DEN MAIN
 	public static void main(String[] args) 
 	{
 		Partida.getNirePartida().hasieratuPartida();
 	}
-	
-//	public void kontsolaGarbitu() throws IOException, InterruptedException {
-//		new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-//	}
 }
