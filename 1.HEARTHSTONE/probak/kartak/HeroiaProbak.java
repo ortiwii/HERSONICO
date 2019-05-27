@@ -16,7 +16,6 @@ public class HeroiaProbak
 		h1 = new Heroia ();
 		h2 = new Heroia ();
 	}
-
 	@After
 	public void tearDown() throws Exception 
 	{
@@ -56,3 +55,7 @@ public class HeroiaProbak
 		assertFalse (h1.bizirikDago());
 	}
 }
+
+
+
+	

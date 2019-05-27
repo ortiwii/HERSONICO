@@ -22,7 +22,6 @@ public class MorroiaProbak {
 		mo2 = new Morroia (0002, "Janire", "Kafea gustatzen zaio", 2, 1, 1, null);
 		mo3 = new Morroia (0003, "Camilo", "Presentazioak oso ondo egiten ditu", 3, 1, 4, t2);
 	}
-
 	@After
 	public void tearDown() throws Exception {
 		t1 = null;
@@ -31,7 +30,6 @@ public class MorroiaProbak {
 		mo2 = null;
 		mo3 = null;
 	}
-
 	@Test
 	public void testKopiaBatEgin() {
 		
@@ -46,10 +44,7 @@ public class MorroiaProbak {
 		// balio berdina dutela konprobatzen dugu.
 		assertEquals(morroi1.getBalioa(), mo1.getBalioa());
 		// erasoa berdina del konprobatzen dugu.
-		
-		
 	}
-
 	@Test
 	public void testMorroia() {
 		assertNotNull(mo1);
@@ -58,7 +53,6 @@ public class MorroiaProbak {
 		assertNotNull(t1);
 		assertNotNull(t2);
 	}
-
 	@Test
 	public void testKartaHoniErasotu() {
 		assertEquals(mo1.getBizitza(), 2);
@@ -86,22 +80,18 @@ public class MorroiaProbak {
 		// Hemen ez du eraso jarraia oraindik...
 		mo2.setDiana();
 	}
-
 	@Test
 	public void testGetErasoa() {
 		assertEquals(mo1.getErasoa(), 4);
 		assertEquals(mo2.getErasoa(), 1);
 		assertEquals(mo3.getErasoa(), 1);
-		//int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna
 	}
-
 	@Test
 	public void testGetBizitza() {
 		assertEquals(mo1.getBizitza(), 2);
 		assertEquals(mo2.getBizitza(), 1);
 		assertEquals(mo3.getBizitza(), 4);
 	}
-
 	@Test
 	public void testGetNiriSoilikErasoAhal() {
 		// Este metodo es para saber si tienes diana o no.
@@ -110,7 +100,6 @@ public class MorroiaProbak {
 		mo3.setDiana();
 		assertTrue(mo3.getNiriSoilikErasoAhal());
 	}
-
 	@Test
 	public void testGetTrebetasunaErabilita() {
 		assertEquals(mo1.getTrebetasunaErabilita(), false);
@@ -123,25 +112,20 @@ public class MorroiaProbak {
 		assertEquals(mo3.getTrebetasunaErabilita(), true);
 		// mo3 morroiak t2 trebetasuna du, hau da, diana du
 	}
-
 	@Test
 	public void testSetErasoa() {
 		assertEquals(mo1.getErasoa(), 4);
 		mo1.setErasoa(1);
-		assertEquals(mo1.getErasoa(), 1);
-
-		
+		assertEquals(mo1.getErasoa(), 1);	
+	
 		assertEquals(mo2.getErasoa(), 1);
 		mo2.setErasoa(2);
 		assertEquals(mo2.getErasoa(), 2);
-
-		
+	
 		assertEquals(mo3.getErasoa(), 1);
 		mo3.setErasoa(2);
 		assertEquals(mo3.getErasoa(), 2);
-
 	}
-
 	@Test
 	public void testSetTrebetasunaErabilita() {
 		assertEquals(mo1.getTrebetasunaErabilita(), false);
@@ -154,5 +138,4 @@ public class MorroiaProbak {
 		assertEquals(mo3.getTrebetasunaErabilita(), true);
 		// mo3 morroiak t2 trebetasuna du, hau da, diana du
 	}
-
 }

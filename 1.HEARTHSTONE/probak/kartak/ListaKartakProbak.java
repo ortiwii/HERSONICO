@@ -101,8 +101,7 @@ public class ListaKartakProbak
 		assertSame (l1.getErasoDezakeetenKartak().getLuzeera(), 1);
 	}
 	@Test
-	public void testKonprobatuEaKartarikHildaDagoen() 
-	{
+	public void testKonprobatuEaKartarikHildaDagoen(){
 		l1.gehituKarta(mo1);
 		l1.gehituKarta(mo2);
 		l1.gehituKarta(mo3);
@@ -119,8 +118,7 @@ public class ListaKartakProbak
 		assertNotEquals (luzeera, l1.getLuzeera());
 	}
 	@Test
-	public void testGehituKarta() 
-	{
+	public void testGehituKarta(){
 		int luz = l1.getLuzeera();
 		l1.gehituKarta(mo1);
 		assertNotSame (l1.getLuzeera(), luz);
@@ -130,10 +128,8 @@ public class ListaKartakProbak
 		assertNotSame (l1.getLuzeera(), luz);
 		
 	}
-
 	@Test
-	public void testKenduKarta() 
-	{
+	public void testKenduKarta(){
 		l1.gehituKarta(mo1);
 		l1.gehituKarta(mo2);
 		l1.gehituKarta(mo3);
@@ -150,41 +146,31 @@ public class ListaKartakProbak
 		l1.kenduKarta(mo3);
 		assertNotSame (l1.getLuzeera(), luzeera);
 	}
-
 	@Test
-	public void testGetPosizioHonetakoKarta() 
-	{
+	public void testGetPosizioHonetakoKarta() {
 		l1.gehituKarta(mo3);
 		l1.gehituKarta(mo2);
-		l1.gehituKarta(mo1);
-		
+		l1.gehituKarta(mo1);	
 		assertEquals (mo3, l1.getPosizioHonetakoKarta(1));
 		assertEquals (mo2, l1.getPosizioHonetakoKarta(2));
 		assertEquals (mo1, l1.getPosizioHonetakoKarta(3));
 	}
-
 	@Test
-	public void testGetDianaDutenKartenLista() 
-	{
+	public void testGetDianaDutenKartenLista() {
 		l1.gehituKarta(mo1);
 		l1.gehituKarta(mo2);
 		l1.gehituKarta(mo3);
-		
 		//ez dago diana duen kartarik
-		assertNull (l1.getDianaDutenKartenLista()); 
-		
+		assertNull (l1.getDianaDutenKartenLista()); 	
 		//badago
 		l1.gehituKarta(moDiana);
 		moDiana.setDiana();
 		assertEquals (l1.getDianaDutenKartenLista().getLuzeera(), 1); 
 	}
-
 	@Test
-	public void testGetLuzeera() 
-	{
+	public void testGetLuzeera() {
 		//ez dauka elementurik
 		assertEquals (l1.getLuzeera(), 0);
-		
 		//baditu
 		int luzeera = l1.getLuzeera();
 		l1.gehituKarta(mo1);
@@ -193,22 +179,18 @@ public class ListaKartakProbak
 		assertNotSame (luzeera, l1.getLuzeera());
 	}
 	@Test
-	public void testGet40Karta() 
-	{
+	public void testGet40Karta() {
 		assertSame (l1.getLuzeera(), 0);
-		
 		l1.setLista(kartaGuztiak.get40Karta());
 		assertSame (l1.getLuzeera(), kartaGuztiak.getLuzeera());
-		
 		Iterator <Karta> itrGuztiak = l1.getIteradorea();
 		Iterator <Karta> itrl1 = kartaGuztiak.getIteradorea();
-		
 		boolean salataria = true;
 		while (itrl1.hasNext() && itrGuztiak.hasNext() && salataria)
 		{
 			Karta Karta1 = itrl1.next();
 			Karta Karta2 = itrGuztiak.next();
-			if (Karta1 != Karta2)
+			if (Karta1 != Karta2)	
 			{
 				salataria = false;
 			}
@@ -216,3 +198,4 @@ public class ListaKartakProbak
 		assertFalse (salataria);
 	}
 }
+
