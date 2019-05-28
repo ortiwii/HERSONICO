@@ -17,7 +17,7 @@ public class SorginkeriaErasokoa extends Sorginkeria
 	//gainontzeko metodoak
 	public void jokatuKarta()
 	{
-		String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-en zelaiko karten artean nori "+this.mina+" puntorekin erasotuko dion esan:";
+		String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-en zelaiko karten artean nori "+this.mina+" puntorekin erasotuko dion esan:";
 		Karta etsaiarenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta(mezua);
 		if (etsaiarenKarta != null)
 		{
@@ -27,31 +27,31 @@ public class SorginkeriaErasokoa extends Sorginkeria
 				if (((Morroia) etsaiarenKarta).getBizitza() <= 0)
 				{
 					System.out.println("	--> "+ ((Morroia)etsaiarenKarta).getIzena()+" HILDA !!!");
-					Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().kenduKarta(etsaiarenKarta);
+					Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().kenduKarta(etsaiarenKarta);
 				}
 				else
 				{
-					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+etsaiarenKarta.getIzena()+" "+((Morroia)etsaiarenKarta).getBizitza()+" bizitza puntu ditu");
+					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren "+etsaiarenKarta.getIzena()+" "+((Morroia)etsaiarenKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
 			Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 		}
 		else
 		{
-			if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista() != null)
+			if (Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getDianaDutenKartenLista() != null)
 			{
 				System.out.println("		- Ez diozu inori erasotuko");
 			}
 			else
 			{
-				Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(mina);
-				if (Partida.getNirePartida().getHeroiEtsaia().getBizitza() <= 0)
+				Partida.getNirePartida().heroiEtsaiariErasotu(mina);
+				if (Partida.getNirePartida().getHeroiEtsaiarenBizitza() <= 0)
 				{
 					System.out.println("		- HEROIA-ri erasotu diozu, eta HIL EGIN DA !!");
 				}
 				else
 				{
-					System.out.print("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" bizitza punto ditu");
+					System.out.print("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaiarenBizitza()+" bizitza punto ditu");
 				}
 				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
 			}

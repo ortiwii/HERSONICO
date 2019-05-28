@@ -128,14 +128,14 @@ public class Teklatua
 			try
 			{
 				int kont = 0;
-				Jokalaria jokEtsaia = Partida.getNirePartida().getJokalariEtsaia();
-				if (jokEtsaia.getNireZelaikoKartak() != null || jokEtsaia.getNireZelaikoKartak().getLuzeera() != 0)
+//				Jokalaria jokEtsaia = Partida.getNirePartida().getJokalariEtsaia();
+				if (Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak() != null || Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getLuzeera() != 0)
 				{
 					System.out.println(mezua);
 					//Aqui vamos a comprobar si alguna de sus cartas tiene la habilidad diana
-					if (jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLista() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
+					if (Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getDianaDutenKartenLista() != null )//|| jokEtsaia.getNireZelaikoKartak().getDianaDutenKartenLisa().getLuzeera() != 0)
 					{	//Hemen sartzen bada badakigu kartaren batek diana duela
-						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getIteradorea();
+						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getDianaDutenKartenLista().getIteradorea();
 						System.out.println("	0) Pasatu");
 						while (itr.hasNext())
 						{
@@ -146,7 +146,7 @@ public class Teklatua
 						System.out.print("	");int zenb = sc.nextInt();
 						this.konprobatuEaZenbakiEgokiaDen(zenb, kont);
 						//Orain badakigu zein den gure aukera
-						aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista().getPosizioHonetakoKarta(zenb);
+						aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getDianaDutenKartenLista().getPosizioHonetakoKarta(zenb);
 						if (zenb == 0)
 						{
 							aukeratutakoKarta = null;
@@ -154,8 +154,8 @@ public class Teklatua
 					}
 					else  
 					{	//Hemen sartzen bada badakigu ez dagoela diana duten kartarik, hau da, edonori eraso diezaike
-						System.out.print("	0) ");Partida.getNirePartida().getHeroiEtsaia().inprimatu();
-						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getIteradorea();
+						System.out.print("	0) ");Partida.getNirePartida().imprimatuHeroiEtsaia();
+						Iterator <Karta> itr = Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getIteradorea();
 						while (itr.hasNext())
 						{
 							kont ++;
@@ -171,7 +171,7 @@ public class Teklatua
 						}
 						else
 						{
-							aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getPosizioHonetakoKarta(zenb);
+							aukeratutakoKarta = Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getPosizioHonetakoKarta(zenb);
 						}
 					}
 				}

@@ -35,7 +35,7 @@ public class Morroia extends Karta
 		if (this.erasoAhal())
 		{
 			//Orain etsaiaren Karten artean, erasoko duen bat aukeratuko du
-			String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-en zelaiko karten artean nori erasotuko dion esan:";
+			String mezua = "	-> "+this.getIzena()+"-k, "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-en zelaiko karten artean nori erasotuko dion esan:";
 			Karta erasotukoDenKarta = Teklatua.getNireTeklatua().irakurriEtsaiarenKarta(mezua);
 			if (erasotukoDenKarta != null)
 			{
@@ -62,12 +62,12 @@ public class Morroia extends Karta
 				
 				else if (((Morroia)erasotukoDenKarta).getBizitza() > 0)
 				{
-					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaia().getIzena()+"-ren "+erasotukoDenKarta.getIzena()+" "+((Morroia)erasotukoDenKarta).getBizitza()+" bizitza puntu ditu");
+					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren "+erasotukoDenKarta.getIzena()+" "+((Morroia)erasotukoDenKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
 			else
 			{	//	=null bada esan nahi du Heroiari eraso egin nahi diola
-				if (Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().getDianaDutenKartenLista() != null)
+				if (Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().getDianaDutenKartenLista() != null)
 				{
 					System.out.println("		- Ez diozu inori erasotuko");
 
@@ -76,14 +76,14 @@ public class Morroia extends Karta
 				}
 				else
 				{
-					Partida.getNirePartida().getHeroiEtsaia().honiErasoEgin(this.erasoa);
-					if (Partida.getNirePartida().getHeroiEtsaia().getBizitza() <= 0)
+					Partida.getNirePartida().heroiEtsaiariErasotu(this.erasoa);
+					if (Partida.getNirePartida().getHeroiEtsaiarenBizitza() <= 0)
 					{
 						System.out.println("		- HEROIA-ri erasotu diozu, eta ☠ HIL EGIN DA ☠!!");
 					}
 					else
 					{
-						System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaia().getBizitza()+" puntu ditu orain");
+						System.out.println("		- HEROIA-ri erasotu diozu, eta "+Partida.getNirePartida().getHeroiEtsaiarenBizitza()+" puntu ditu orain");
 					}
 					
 					//Egoeraren eguneraketa

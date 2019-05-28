@@ -220,7 +220,7 @@ public class Partida
 				System.out.println("");
 				String Mezua = " "+this.listaJokalariak[i].getIzena()+"-ren ZELAIA ";
 				System.out.print("	 ");Teklatua.getNireTeklatua().imprimatuX_(Mezua.length());System.out.println("");
-				System.out.print("	|");System.out.print(Mezua);System.out.println("| Heroiak "+this.listaJokalariak[i].getHeroia().getBizitza()+" Bizitza");
+				System.out.print("	|");System.out.print(Mezua);System.out.println("| Heroiak "+this.listaJokalariak[i].getHeroiarenBizitza()+" Bizitza");
 				System.out.println("");
 				this.listaJokalariak[i].getNireZelaikoKartak().inprimatuLista();
 			}
@@ -254,21 +254,28 @@ public class Partida
 			return this.listaJokalariak[1];
 		}
 	}
-	public Heroia getHeroiEtsaia ()
+	public void imprimatuHeroiEtsaia ()
 	{
-		//como la unekotxanda si es bikoti (%2=0) es el jugador 1, y si no el jugador 2, 
-		// si unekotxanda es bikoti devolvemos el heroe del jugador 2, y si no del 1, es decir,
-		// hacemos lo contrario
-		if (Partida.unekoTxanda % 2 != 0)
-		{ 
-			return this.listaJokalariak[0].getHeroia();
-		}
-		else
-		{
-			return this.listaJokalariak[1].getHeroia();
-		}
+		this.getJokalariEtsaia().imprimatuHeroia();
 	}
-	public Jokalaria getJokalariEtsaia ()
+	public void heroiEtsaiariErasotu (int pErasoa)
+	{
+		this.getJokalariEtsaia().heroiariErasotu(pErasoa);
+	}
+	public int getHeroiEtsaiarenBizitza ()
+	{
+		return this.getJokalariEtsaia().getHeroiarenBizitza();
+	}
+	//Jokalaria
+	public String getJokalariEtsaiarenIzena ()
+	{
+		return this.getJokalariEtsaia().getIzena();
+	}
+	public ListaKartak getJokalariEtsaiarenZelaikoKartak ()
+	{
+		return this.getJokalariEtsaia().getNireZelaikoKartak();
+	}
+	private Jokalaria getJokalariEtsaia ()
 	{
 		if (Partida.unekoTxanda % 2 != 0)
 		{

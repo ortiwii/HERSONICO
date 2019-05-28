@@ -57,7 +57,7 @@ public class Jokalaria
 	public void konprobatuEaKartarikHildaDagoen ()
 	{
 		this.zelaikoKartak.konprobatuEaKartarikHildaDagoen();
-		Partida.getNirePartida().getJokalariEtsaia().getNireZelaikoKartak().konprobatuEaKartarikHildaDagoen();
+		Partida.getNirePartida().getJokalariEtsaiarenZelaikoKartak().konprobatuEaKartarikHildaDagoen();
 	}
 	public void jokatuTxanda() 
 	{
@@ -232,6 +232,14 @@ public class Jokalaria
 		}
 		return emaitza;
 	}
+	public void imprimatuHeroia ()
+	{
+		this.heroia.inprimatu();
+	}
+	public void heroiariErasotu (int pErasoa)
+	{
+		this.heroia.honiErasoEgin(pErasoa);
+	}
 		//setters
 		public void setGemak (int pGemak)
 		{
@@ -242,10 +250,14 @@ public class Jokalaria
 			this.lapurtzekoKartak = pLista;
 		}
 		//getters
-		public Heroia getHeroia ()
+		public int getHeroiarenBizitza ()
 		{
-			return this.heroia;
+			return this.heroia.getBizitza();
 		}
+//		public Heroia getHeroia ()
+//		{
+//			return this.heroia;
+//		}
 		public ListaKartak getNireZelaikoKartak ()
 		{
 			return this.zelaikoKartak;
