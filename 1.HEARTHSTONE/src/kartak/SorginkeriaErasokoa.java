@@ -34,7 +34,7 @@ public class SorginkeriaErasokoa extends Sorginkeria
 					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren "+etsaiarenKarta.getIzena()+" "+((Morroia)etsaiarenKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
-			Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
+			Partida.getNirePartida().setUnekoJokalariarenGemak(Partida.getNirePartida().getUnekoJokalariarenGemak() - super.balioa);
 		}
 		else
 		{
@@ -53,7 +53,7 @@ public class SorginkeriaErasokoa extends Sorginkeria
 				{
 					System.out.print("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren Heroiak, orain "+Partida.getNirePartida().getHeroiEtsaiarenBizitza()+" bizitza punto ditu");
 				}
-				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
+				Partida.getNirePartida().setUnekoJokalariarenGemak(Partida.getNirePartida().getUnekoJokalariarenGemak() - super.balioa);
 			}
 		}
 		System.out.println("");

@@ -243,9 +243,42 @@ public class Partida
 		this.listaJokalariak[1].getNireZelaikoKartak().trebetasunakEgikaritu();
 	}
 		//getters
-	public Jokalaria getUnekoJokalaria ()
+	//Uneko Jokalaria
+	private Jokalaria getUnekoJokalaria ()
 	{
 		if (Partida.unekoTxanda % 2 == 0)
+		{
+			return this.listaJokalariak[0];
+		}
+		else
+		{
+			return this.listaJokalariak[1];
+		}
+	}
+	public int getUnekoJokalariarenGemak ()
+	{
+		return this.getUnekoJokalaria().getGemak();
+	}
+	public String getUnekoJokalariarenIzena ()
+	{
+		return this.getUnekoJokalaria().getIzena();
+	}
+	public ListaKartak getUnekoJokalariarenZelaikoKartak ()
+	{
+		return this.getUnekoJokalaria().getNireZelaikoKartak();
+	}
+	//Jokalari Etsaia 
+	public String getJokalariEtsaiarenIzena ()
+	{
+		return this.getJokalariEtsaia().getIzena();
+	}
+	public ListaKartak getJokalariEtsaiarenZelaikoKartak ()
+	{
+		return this.getJokalariEtsaia().getNireZelaikoKartak();
+	}
+	private Jokalaria getJokalariEtsaia ()
+	{
+		if (Partida.unekoTxanda % 2 != 0)
 		{
 			return this.listaJokalariak[0];
 		}
@@ -266,32 +299,17 @@ public class Partida
 	{
 		return this.getJokalariEtsaia().getHeroiarenBizitza();
 	}
-	//Jokalaria
-	public String getJokalariEtsaiarenIzena ()
-	{
-		return this.getJokalariEtsaia().getIzena();
-	}
-	public ListaKartak getJokalariEtsaiarenZelaikoKartak ()
-	{
-		return this.getJokalariEtsaia().getNireZelaikoKartak();
-	}
-	private Jokalaria getJokalariEtsaia ()
-	{
-		if (Partida.unekoTxanda % 2 != 0)
-		{
-			return this.listaJokalariak[0];
-		}
-		else
-		{
-			return this.listaJokalariak[1];
-		}
-	}
+		//Txanda
 	public int getUnekoTxanda ()
 	{
 		return Partida.unekoTxanda;
 	}
 
 		//setters
+		public void setUnekoJokalariarenGemak (int pGemak)
+		{
+			this.getUnekoJokalaria().setGemak(pGemak);
+		}
 		public void setJok (Jokalaria jok, int pos)
 		{
 			this.listaJokalariak[pos] = jok;
@@ -300,7 +318,8 @@ public class Partida
 		{
 			Partida.unekoTxanda = txanda;
 		}
-	//JOKOA HASIERATZEKO BEHARREZKOA DEN MAIN
+	
+		//JOKOA HASIERATZEKO BEHARREZKOA DEN MAIN
 	public static void main(String[] args) 
 	{
 		Partida.getNirePartida().hasieratuPartida();

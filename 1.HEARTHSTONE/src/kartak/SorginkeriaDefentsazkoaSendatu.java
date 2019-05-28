@@ -20,13 +20,13 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 		public void jokatuKarta ()
 		{
 			Karta nireKarta = Teklatua.getNireTeklatua().irakurriAukera("	Zure zelaiko karten artean, zeini eman nahi diziozu "+this.sendatuKop+" bizitza punto?", 
-					Partida.getNirePartida().getUnekoJokalaria().getNireZelaikoKartak());
+					Partida.getNirePartida().getUnekoJokalariarenZelaikoKartak());
 			if (nireKarta != null)
 			{
 				this.emanDefentsa(nireKarta);
 				if (((Morroia)nireKarta).getBizitza() > 0)
 				{
-					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalaria().getIzena()+"-ren "+nireKarta.getIzena()+" "+((Morroia)nireKarta).getBizitza()+" bizitza puntu ditu");
+					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalariarenIzena()+"-ren "+nireKarta.getIzena()+" "+((Morroia)nireKarta).getBizitza()+" bizitza puntu ditu");
 				}
 			}
 			else
@@ -39,7 +39,7 @@ public class SorginkeriaDefentsazkoaSendatu extends SorginkeriaDefentsazkoa
 			if (pKarta != null)
 			{	
 				((Morroia)pKarta).kartaHoniErasotu(this.sendatuKop*(-1));
-				Partida.getNirePartida().getUnekoJokalaria().setGemak(Partida.getNirePartida().getUnekoJokalaria().getGemak() - super.balioa);
+				Partida.getNirePartida().setUnekoJokalariarenGemak(Partida.getNirePartida().getUnekoJokalariarenGemak() - super.balioa);
 			}
 			else
 			{

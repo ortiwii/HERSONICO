@@ -47,9 +47,9 @@ public class Morroia extends Karta
 				this.kartaHoniErasotu(((Morroia) erasotukoDenKarta).getErasoa());
 				
 				//Gemen eguneraketa
-				int gemak = Partida.getNirePartida().getUnekoJokalaria().getGemak();
+				int gemak = Partida.getNirePartida().getUnekoJokalariarenGemak();
 				gemak = gemak - super.getBalioa();
-				Partida.getNirePartida().getUnekoJokalaria().setGemak(gemak);
+				Partida.getNirePartida().setUnekoJokalariarenGemak(gemak);
 				
 				//Egoeraren eguneraketa
 				super.setErasoDezakeen(false);
@@ -57,10 +57,9 @@ public class Morroia extends Karta
 				//imprimaketa
 				if (this.bizitza > 0)
 				{
-					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalaria().getIzena()+"-ren "+this.izena+" "+this.bizitza+" bizitza puntu ditu");
+					System.out.println("		- "+Partida.getNirePartida().getUnekoJokalariarenIzena()+"-ren "+this.izena+" "+this.bizitza+" bizitza puntu ditu");
 				}
-				
-				else if (((Morroia)erasotukoDenKarta).getBizitza() > 0)
+				if (((Morroia)erasotukoDenKarta).getBizitza() > 0)
 				{
 					System.out.println("		- "+Partida.getNirePartida().getJokalariEtsaiarenIzena()+"-ren "+erasotukoDenKarta.getIzena()+" "+((Morroia)erasotukoDenKarta).getBizitza()+" bizitza puntu ditu");
 				}
