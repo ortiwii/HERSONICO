@@ -121,10 +121,6 @@ public class ListaKartak
 		}
 		this.lista = emaitza;
 	}
-	public ArrayList<Karta> getLista()
-	{
-		return this.lista;
-	}
 	public void gehituKarta(Karta pKarta) 
 	{
 			this.lista.add(pKarta);

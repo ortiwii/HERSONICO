@@ -33,7 +33,7 @@ public class Jokalaria
 	}
 	
 	//gainontzeko metodoak
-	public void hasieratuJokalaria ()
+	private void hasieratuJokalaria ()
 	{
 		this.lapurtzekoKartak.setLista(Partida.kartaGuztiak.get40Karta());
 		this.lapurtu();
@@ -226,7 +226,7 @@ public class Jokalaria
 	public boolean galduDuzu ()
 	{
 		boolean emaitza = false;
-		if (this.heroia.getBizitza() <= 0)
+		if (!this.heroia.bizirikDago())
 		{
 			emaitza =  true;
 		}
