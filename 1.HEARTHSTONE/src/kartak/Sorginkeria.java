@@ -11,11 +11,7 @@ public abstract class Sorginkeria extends Karta
 	}
 	
 	//gainontzeko metodoak
-	public boolean edonoriErasoDiezaioke (ListaKartak pLista)
-	{
-		boolean emaitza = false; 
-		return emaitza;
-	}
+	public abstract void jokatuKarta ();
 	public abstract void imprimatu ();
 	public void egoeraEguneratu ()
 	{

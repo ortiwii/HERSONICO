@@ -11,7 +11,7 @@ public class Morroia extends Karta
 	private Trebetasuna trebetasuna;
 		//por si tiene la habilidad diana
 	private boolean niriSoilikErasoAhal;
-	private boolean trebetasunaErabilita = false;
+	private boolean trebetasunaErabilita;
 	
 	//eraikitzailea
 	public Morroia(int pIdKarta, String pIzena, String pDeskribapena, int pBalioa, int pErasoa, int pBizitza, Trebetasuna pTrebetasuna) 
@@ -24,6 +24,7 @@ public class Morroia extends Karta
 			this.trebetasuna.erabiliTrebetasuna (this);
 		}
 			//atributoen hasieratzea
+		this.trebetasunaErabilita = false;
 		this.niriSoilikErasoAhal = false;
 		this.bizitza = pBizitza;
 		this.erasoa = pErasoa;
@@ -124,10 +125,6 @@ public class Morroia extends Karta
 	{
 		this.bizitza = this.bizitza - pErasoa;
 		return this.erasoa;
-	}
-	public void erabiliTrebetasuna()
-	{
-		this.trebetasuna.erabiliTrebetasuna(this);
 	}
 	//Siempre hay que comprobar esto para que pueda atacar
 	private boolean erasoAhal()
