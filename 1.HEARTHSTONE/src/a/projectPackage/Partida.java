@@ -139,7 +139,7 @@ public class Partida
 				Partida.kartaGuztiak.gehituKarta(egungoKarta);
 			}		
 	}
-	public void hasieratuPartida ()
+	private void hasieratuPartida ()
 	{
 		this.kartaGuztiakKargatu();
 		System.out.println("\n\n       			░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░");
@@ -189,7 +189,7 @@ public class Partida
 		
 		return this.irabazia().getIzena();
 	}
-	public void hurrengoTxanda() 
+	private void hurrengoTxanda() 
 	{
 		Teklatua.getNireTeklatua().itxaronEnterArte();
 		//Suma 1 a uneko txanda
@@ -227,7 +227,7 @@ public class Partida
 			
 			System.out.println("\n    ------------------------------------------------------------------------------------------");
 			System.out.println("    ------------------------------------------------------------------------------------------");		}
-}
+	}
 	
 	public void kartenEgoeraEguneratu ()
 	{

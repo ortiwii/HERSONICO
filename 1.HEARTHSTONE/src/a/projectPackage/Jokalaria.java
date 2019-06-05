@@ -254,10 +254,6 @@ public class Jokalaria
 		{
 			return this.heroia.getBizitza();
 		}
-//		public Heroia getHeroia ()
-//		{
-//			return this.heroia;
-//		}
 		public ListaKartak getNireZelaikoKartak ()
 		{
 			return this.zelaikoKartak;
