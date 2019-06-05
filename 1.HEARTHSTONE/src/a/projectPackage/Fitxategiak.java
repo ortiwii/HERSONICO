@@ -5,7 +5,7 @@ import java.io.FileReader;
 
 public class Fitxategiak 
 {
-	private static Fitxategiak nireFitxategiak;
+	private static Fitxategiak nireFitxategiak = null;
 	private BufferedReader br;
 	
 	private Fitxategiak ()

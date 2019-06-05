@@ -62,7 +62,7 @@ public class Teklatua
 			throw new ZenbakiaEzDaEgokiaSalbuespena();
 		}
 	}
-	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak) throws InputMismatchException
+	public Karta irakurriAukera (String pAurrekoMezua, ListaKartak pAukerak) 
 	{
 		boolean salataria = false;
 		Karta egungoKarta = null;
